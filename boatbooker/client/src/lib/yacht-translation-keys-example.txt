@@ -1,0 +1,21 @@
+# Esempio chiavi per traduzione barche (da aggiungere in translations.ts)
+
+# Sostituisci "nepla" con l'id reale della barca
+
+it: {
+  'yacht.nepla.description': 'Descrizione in italiano della barca Nepla.',
+  'yacht.nepla.features.0': 'Caratteristica 1 in italiano',
+  'yacht.nepla.features.1': 'Caratteristica 2 in italiano',
+  'yacht.nepla.features.2': 'Caratteristica 3 in italiano',
+  // ...altre features se presenti
+},
+
+en: {
+  'yacht.nepla.description': 'English description for Nepla yacht.',
+  'yacht.nepla.features.0': 'Feature 1 in English',
+  'yacht.nepla.features.1': 'Feature 2 in English',
+  'yacht.nepla.features.2': 'Feature 3 in English',
+  // ...other features if present
+},
+
+# Copia e incolla queste chiavi in translations.ts e personalizza per ogni barca.
