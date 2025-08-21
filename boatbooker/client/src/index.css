@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(210, 25%, 7.8431%);
+  --card: hsl(180, 6.6667%, 97.0588%);
+  --card-foreground: hsl(210, 25%, 7.8431%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(210, 25%, 7.8431%);
+  --primary: hsl(203, 88%, 53%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(206, 100%, 88%);
+  --secondary-foreground: hsl(210, 25%, 7.8431%);
+  --muted: hsl(240, 1.9608%, 90%);
+  --muted-foreground: hsl(210, 25%, 7.8431%);
+  --accent: hsl(199, 89%, 95%);
+  --accent-foreground: hsl(203, 88%, 53%);
+  --destructive: hsl(356.3033, 90.5579%, 54.3137%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(201.4286, 30.4348%, 90.9804%);
+  --input: hsl(200, 23.0769%, 97.4510%);
+  --ring: hsl(203, 88%, 53%);
+  --chart-1: hsl(203, 88%, 53%);
+  --chart-2: hsl(180, 82%, 47%);
+  --chart-3: hsl(42.0290, 92.8251%, 56.2745%);
+  --chart-4: hsl(147.1429, 78.5047%, 41.9608%);
+  --chart-5: hsl(341.4894, 75.2000%, 50.9804%);
+  --radius: 1.3rem;
+
+  /* Custom Puglia Boat Theme Colors */
+  --ocean-blue: hsl(203, 88%, 53%);
+  --ocean-cyan: hsl(187, 91%, 42%);
+  --ocean-navy: hsl(210, 78%, 20%);
+  --ocean-light: hsl(199, 89%, 95%);
+  --sand: hsl(45, 93%, 85%);
+
+  /* Shapes Theme Specific */
+  --shapes-gradient-start: hsl(203, 88%, 53%);
+  --shapes-gradient-end: hsl(187, 91%, 42%);
+  --shapes-accent: hsl(45, 93%, 85%);
+  --shapes-overlay: hsl(203, 88%, 53%, 0.1);
+
+  --font-display: 'Inter', 'system-ui', sans-serif;
+}
+
+.dark {
+  --background: hsl(0, 0%, 0%);
+  --foreground: hsl(200, 6.6667%, 91.1765%);
+  --card: hsl(228, 9.8039%, 10%);
+  --card-foreground: hsl(0, 0%, 85.0980%);
+  --popover: hsl(0, 0%, 0%);
+  --popover-foreground: hsl(200, 6.6667%, 91.1765%);
+  --primary: hsl(203, 88%, 53%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(210, 78%, 20%);
+  --secondary-foreground: hsl(199, 89%, 95%);
+  --muted: hsl(0, 0%, 9.4118%);
+  --muted-foreground: hsl(210, 3.3898%, 46.2745%);
+  --accent: hsl(210, 78%, 15%);
+  --accent-foreground: hsl(203, 88%, 53%);
+  --destructive: hsl(356.3033, 90.5579%, 54.3137%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(210, 5.2632%, 14.9020%);
+  --input: hsl(207.6923, 27.6596%, 18.4314%);
+  --ring: hsl(203, 88%, 53%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-display antialiased bg-background text-foreground;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Shapes Theme Specific Components */
+  .shapes-hero-overlay {
+    background: linear-gradient(135deg, var(--shapes-gradient-start), var(--shapes-gradient-end));
+    opacity: 0.08;
+    z-index: 3;
+  }
+
+  .shapes-geometric-bg {
+    background-image: 
+      radial-gradient(circle at 20% 50%, var(--shapes-overlay) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, var(--shapes-overlay) 0%, transparent 50%),
+      radial-gradient(circle at 40% 80%, var(--shapes-overlay) 0%, transparent 50%);
+    z-index: 5;
+  }
+
+  /* Ensure content is always above background */
+  .page-content {
+    position: relative;
+    z-index: 10;
+  }
+
+  /* Ensure hero sections stay above background */
+  .hero-section {
+    position: relative;
+    z-index: 10;
+  }
+
+  .shapes-card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .shapes-card-hover:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Geometric Shapes */
+  .geometric-circle {
+    @apply rounded-full;
+  }
+
+  .geometric-square {
+    @apply transform rotate-45;
+  }
+
+  .geometric-triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+
+  /* Wave animations */
+  .wave-animation {
+    animation: wave 3s ease-in-out infinite;
+  }
+
+  @keyframes wave {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+  }
+
+  /* Floating animations for geometric elements */
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { 
+      transform: translateY(0px) rotate(0deg); 
+      opacity: 0.8;
+    }
+    50% { 
+      transform: translateY(-20px) rotate(5deg); 
+      opacity: 1;
+    }
+  }
+
+  /* Shapes signature overlapping elements */
+  .shapes-overlap {
+    position: relative;
+    z-index: 10;
+  }
+
+  .shapes-overlap::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: var(--shapes-overlay);
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--ocean-light);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--ocean-blue);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--ocean-navy);
+  }
+}
+
+@layer utilities {
+  .text-ocean-blue {
+    color: var(--ocean-blue);
+  }
+
+  .text-ocean-cyan {
+    color: var(--ocean-cyan);
+  }
+
+  .text-ocean-navy {
+    color: var(--ocean-navy);
+  }
+
+  .bg-ocean-blue {
+    background-color: var(--ocean-blue);
+  }
+
+  .bg-ocean-cyan {
+    background-color: var(--ocean-cyan);
+  }
+
+  .bg-ocean-navy {
+    background-color: var(--ocean-navy);
+  }
+
+  .bg-ocean-light {
+    background-color: var(--ocean-light);
+  }
+
+  .bg-sand {
+    background-color: var(--sand);
+  }
+
+  .border-ocean-blue {
+    border-color: var(--ocean-blue);
+  }
+
+  .border-ocean-cyan {
+    border-color: var(--ocean-cyan);
+  }
+
+  .gradient-ocean {
+    background: linear-gradient(135deg, var(--ocean-blue), var(--ocean-cyan));
+  }
+
+  .gradient-ocean-light {
+    background: linear-gradient(135deg, var(--ocean-light), white);
+  }
+}

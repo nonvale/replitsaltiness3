@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saltiness - Apulian Boat Charter Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ocean-blue': '#3B82F6',
+                        'ocean-cyan': '#06B6D4',
+                        'ocean-navy': '#1E3A8A',
+                        'ocean-light': '#EFF6FF',
+                        'sand': '#FEF3C7'
+                    },
+                    fontFamily: {
+                        'display': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-white font-display">
+    
+    <!-- @COMPONENT: Header -->
+    <header class="relative z-50 bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <span class="text-2xl font-black text-ocean-navy">SALTINESS</span>
+                    </div>
+                </div>
+                
+                <nav class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#flotta" class="text-gray-700 hover:text-ocean-blue font-medium">Flotta</a>
+                        <a href="#destinazioni" class="text-gray-700 hover:text-ocean-blue font-medium">Destinazioni</a>
+                        <a href="#servizi" class="text-gray-700 hover:text-ocean-blue font-medium">Servizi</a>
+                        <a href="#contatti" class="text-gray-700 hover:text-ocean-blue font-medium">Contatti</a>
+                    </div>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <a href="tel:+393895194113" class="text-ocean-blue hover:text-ocean-navy">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                    <a href="https://wa.me/393895194113" class="bg-ocean-blue text-white px-4 py-2 rounded-full font-semibold hover:bg-ocean-navy transition-colors">
+                        Prenota Ora
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button class="text-gray-700">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- @END_COMPONENT: Header -->
+
+    <!-- @COMPONENT: Hero Section (Shapes Style) -->
+    <section class="relative bg-white overflow-hidden">
+        <!-- Geometric Background Elements -->
+        <div class="absolute inset-0">
+            <div class="absolute top-20 left-10 w-32 h-32 bg-ocean-light rounded-full opacity-50"></div>
+            <div class="absolute top-40 right-20 w-24 h-24 bg-ocean-cyan opacity-20 transform rotate-45"></div>
+            <div class="absolute bottom-20 left-20 w-16 h-16 bg-sand rounded-full"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Content Side -->
+                <div class="relative z-10">
+                    <div class="relative">
+                        <!-- Geometric accent -->
+                        <div class="absolute -top-6 -left-6 w-12 h-12 bg-ocean-blue transform rotate-12"></div>
+                        
+                        <h1 class="text-5xl lg:text-7xl font-black text-ocean-navy leading-tight">
+                            VIVI LA
+                            <span class="text-ocean-blue">PUGLIA</span>
+                            IN BARCA
+                        </h1>
+                    </div>
+                    
+                    <p class="mt-6 text-xl text-gray-600 leading-relaxed">
+                        Che tu prediliga l'eleganza senza tempo della vela o l'adrenalina della velocità, 
+                        sentiti a casa mentre navighi a bordo della tua imbarcazione preferita!
+                    </p>
+
+                    <!-- Location Filter Buttons -->
+                    <div class="mt-8">
+                        <p class="text-sm font-semibold text-gray-500 mb-4">SCEGLI LA TUA DESTINAZIONE</p>
+                        <div class="flex flex-wrap gap-3">
+                            <!-- @MAP: locations.map(location => ( -->
+                            <button data-location="monopoli" class="location-btn bg-ocean-blue text-white px-6 py-3 rounded-full font-semibold hover:bg-ocean-navy transition-all transform hover:scale-105">
+                                <i class="fas fa-map-marker-alt mr-2"></i>Monopoli
+                            </button>
+                            <button data-location="polignano" class="location-btn bg-white text-ocean-blue border-2 border-ocean-blue px-6 py-3 rounded-full font-semibold hover:bg-ocean-blue hover:text-white transition-all">
+                                <i class="fas fa-map-marker-alt mr-2"></i>Polignano a Mare
+                            </button>
+                            <button data-location="leuca" class="location-btn bg-white text-ocean-blue border-2 border-ocean-blue px-6 py-3 rounded-full font-semibold hover:bg-ocean-blue hover:text-white transition-all">
+                                <i class="fas fa-map-marker-alt mr-2"></i>Santa Maria di Leuca
+                            </button>
+                            <button data-location="gallipoli" class="location-btn bg-white text-ocean-blue border-2 border-ocean-blue px-6 py-3 rounded-full font-semibold hover:bg-ocean-blue hover:text-white transition-all">
+                                <i class="fas fa-map-marker-alt mr-2"></i>Gallipoli
+                            </button>
+                            <!-- @END_MAP )) -->
+                        </div>
+                    </div>
+
+                    <div class="mt-10 flex flex-col sm:flex-row gap-4">
+                        <a href="#flotta" class="bg-ocean-blue text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-ocean-navy transition-colors transform hover:scale-105">
+                            Scopri la Flotta
+                        </a>
+                        <a href="https://wa.me/393895194113" class="border-2 border-ocean-blue text-ocean-blue px-8 py-4 rounded-full font-bold text-lg hover:bg-ocean-blue hover:text-white transition-colors">
+                            <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Image Side with Shapes Overlay -->
+                <div class="relative">
+                    <!-- Main Hero Image (Non-fullscreen as per Shapes style) -->
+                    <div class="relative bg-ocean-light rounded-3xl overflow-hidden shadow-2xl">
+                        <!-- Panoramic view of luxury yacht sailing in crystal clear Mediterranean waters off the Puglia coast -->
+                        <img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                             alt="Luxury yacht sailing in Mediterranean waters" 
+                             class="w-full h-96 object-cover">
+                        
+                        <!-- Overlapping Logo Element (Shapes Signature) -->
+                        <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-xl border-4 border-ocean-blue">
+                            <div class="text-center">
+                                <div class="text-2xl font-black text-ocean-navy">SALTINESS</div>
+                                <div class="text-sm text-ocean-blue font-semibold">APULIAN EXPERIENCE</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Elements -->
+                    <div class="absolute -top-4 -right-4 bg-sand p-4 rounded-full shadow-lg">
+                        <i class="fas fa-anchor text-ocean-blue text-2xl"></i>
+                    </div>
+                    
+                    <div class="absolute top-1/2 -right-8 bg-ocean-cyan text-white p-3 rounded-full shadow-lg transform rotate-12">
+                        <i class="fas fa-ship text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wave Pattern -->
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg viewBox="0 0 1200 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-12">
+                <path d="M0,96L48,85.3C96,75,192,53,288,58.7C384,64,480,96,576,112C672,128,768,128,864,117.3C960,107,1056,85,1152,85.3L1200,85.3L1200,120L1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" fill="#EFF6FF"/>
+            </svg>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: Fleet Section -->
+    <section id="flotta" class="py-20 bg-ocean-light relative overflow-hidden">
+        <!-- Geometric Background -->
+        <div class="absolute inset-0">
+            <div class="absolute top-0 left-1/4 w-64 h-64 bg-white rounded-full opacity-50 transform -translate-y-32"></div>
+            <div class="absolute bottom-0 right-1/4 w-48 h-48 bg-ocean-cyan opacity-10 transform rotate-45 translate-y-24"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section Header with Shapes Style -->
+            <div class="text-center mb-16">
+                <div class="relative inline-block">
+                    <div class="absolute -top-4 -left-4 w-8 h-8 bg-ocean-blue transform rotate-45"></div>
+                    <h2 class="text-4xl lg:text-6xl font-black text-ocean-navy">
+                        LA NOSTRA
+                        <span class="text-ocean-blue">FLOTTA</span>
+                    </h2>
+                </div>
+                <p class="mt-6 text-xl text-gray-600 max-w-3xl mx-auto">
+                    Scopri la nostra collezione di yacht selezionati, ognuno con caratteristiche uniche 
+                    per regalarti un'esperienza indimenticabile nelle acque cristalline della Puglia.
+                </p>
+            </div>
+
+            <!-- Filter Bar -->
+            <div class="mb-12 bg-white rounded-2xl p-6 shadow-lg">
+                <div class="flex flex-wrap items-center gap-4">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-filter text-ocean-blue"></i>
+                        <span class="font-semibold text-gray-700">Filtra per:</span>
+                    </div>
+                    
+                    <select class="px-4 py-2 border border-gray-200 rounded-full focus:ring-2 focus:ring-ocean-blue">
+                        <option>Tutte le Location</option>
+                        <option>Monopoli</option>
+                        <option>Polignano a Mare</option>
+                        <option>Santa Maria di Leuca</option>
+                        <option>Gallipoli</option>
+                    </select>
+                    
+                    <select class="px-4 py-2 border border-gray-200 rounded-full focus:ring-2 focus:ring-ocean-blue">
+                        <option>Capacità</option>
+                        <option>1-6 persone</option>
+                        <option>7-10 persone</option>
+                        <option>11+ persone</option>
+                    </select>
+                    
+                    <select class="px-4 py-2 border border-gray-200 rounded-full focus:ring-2 focus:ring-ocean-blue">
+                        <option>Prezzo</option>
+                        <option>€1,000 - €2,000</option>
+                        <option>€2,000 - €4,000</option>
+                        <option>€4,000+</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Yacht Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- @MAP: yachts.map(yacht => ( -->
+                
+                <!-- SunSeeker 68S -->
+                <div class="yacht-card bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-2" data-location="monopoli">
+                    <div class="relative">
+                        <!-- Luxury SunSeeker 68S yacht anchored in a pristine Mediterranean bay -->
+                        <img src="https://images.unsplash.com/photo-1540946485063-a40da27545f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500" 
+                             alt="SunSeeker 68S luxury yacht" 
+                             class="w-full h-64 object-cover">
+                        
+                        <!-- Location Badge -->
+                        <div class="absolute top-4 left-4 bg-ocean-blue text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <i class="fas fa-map-marker-alt mr-1"></i>Monopoli
+                        </div>
+                        
+                        <!-- Premium Badge -->
+                        <div class="absolute top-4 right-4 bg-sand text-ocean-navy px-3 py-1 rounded-full text-sm font-bold">
+                            PREMIUM
+                        </div>
+
+                        <!-- Geometric Overlay -->
+                        <div class="absolute bottom-0 right-0 w-16 h-16 bg-ocean-cyan opacity-20 transform rotate-45 translate-x-8 translate-y-8"></div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-ocean-navy">SunSeeker 68S</h3>
+                                <p class="text-gray-600">Luxury Motor Yacht</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-black text-ocean-blue">€5,500</div>
+                                <div class="text-sm text-gray-500">al giorno</div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-4 mb-6">
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-ocean-navy">12</div>
+                                <div class="text-xs text-gray-500">Ospiti</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-ocean-navy">21m</div>
+                                <div class="text-xs text-gray-500">Lunghezza</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-ocean-navy">3</div>
+                                <div class="text-xs text-gray-500">Cabine</div>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <button class="flex-1 bg-ocean-blue text-white py-3 rounded-full font-semibold hover:bg-ocean-navy transition-colors">
+                                Prenota
+                            </button>
+                            <button class="px-4 py-3 border-2 border-ocean-blue text-ocean-blue rounded-full hover:bg-ocean-blue hover:text-white transition-colors">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SunSeeker 53 -->
+                <div class="yacht-card bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-2" data-location="monopoli">
+                    <div class="relative">
+                        <!-- Elegant SunSeeker 53 yacht cruising along the Italian coastline -->
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500" 
+                             alt="SunSeeker 53 motor yacht" 
+                             class="w-full h-64 object-cover">
+                        
+                        <div class="absolute top-4 left-4 bg-ocean-blue text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <i class="fas fa-map-marker-alt mr-1"></i>Monopoli
+                        </div>
+                        
+                        <div class="absolute bottom-0 right-0 w-12 h-12 bg-ocean-light opacity-80 rounded-full transform translate-x-6 translate-y-6"></div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-ocean-navy">SunSeeker 53</h3>
+                                <p class="text-gray-600">Motor Yacht</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-black text-ocean-blue">€2,500</div>
+                                <div class="text-sm text-gray-500">al giorno</div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-4 mb-6">
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-ocean-navy">10</div>
+                                <div class="text-xs text-gray-500">Ospiti</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-ocean-navy">16m</div>
+                                <div class="text-xs text-gray-500">Lunghezza</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-ocean-navy">2</div>
+                                <div class="text-xs text-gray-500">Cabine</div>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <button class="flex-1 bg-ocean-blue text-white py-3 rounded-full font-semibold hover:bg-ocean-navy transition-colors">
+                                Prenota
+                            </button>
+                            <button class="px-4 py-3 border-2 border-ocean-blue text-ocean-blue rounded-full hover:bg-ocean-blue hover:text-white transition-colors">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Abacus 62 -->
+                <div class="yacht-card bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-2" data-location="polignano">
+                    <div class="relative">
+                        <!-- Modern Abacus 62 yacht sailing near dramatic limestone cliffs -->
+                        <img src="https://pixabay.com/get/g26483f24dfa27759dc869d83a416f3b09dd599ef12ff110722daa8bc1b5695c9385d7552a7f9069e06f4be2dc1d6796b8f25a7b031745c7b1af75361820fa9d8_1280.jpg" 
+                             alt="Abacus 62 sailing yacht" 
+                             class="w-full h-64 object-cover">
+                        
+                        <div class="absolute top-4 left-4 bg-ocean-cyan text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <i class="fas fa-map-marker-alt mr-1"></i>Polignano a Mare
+                        </div>
+                        
+                        <div class="absolute top-4 right-4 bg-sand text-ocean-navy px-3 py-1 rounded-full text-sm font-bold">
+                            PREMIUM
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-ocean-navy">Abacus 62</h3>
+                                <p class="text-gray-600">Sailing Yacht</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-black text-ocean-blue">€5,500</div>
+                                <div class="text-sm text-gray-500">al giorno</div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-4 mb-6">
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-ocean-navy">12</div>
+                                <div class="text-xs text-gray-500">Ospiti</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-ocean-navy">19m</div>
+                                <div class="text-xs text-gray-500">Lunghezza</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-ocean-navy">4</div>
+                                <div class="text-xs text-gray-500">Cabine</div>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <button class="flex-1 bg-ocean-blue text-white py-3 rounded-full font-semibold hover:bg-ocean-navy transition-colors">
+                                Prenota
+                            </button>
+                            <button class="px-4 py-3 border-2 border-ocean-blue text-ocean-blue rounded-full hover:bg-ocean-blue hover:text-white transition-colors">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cranchi Z35 -->
+                <div class="yacht-card bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-2" data-location="monopoli">
+                    <div class="relative">
+                        <!-- Sporty Cranchi Z35 yacht with sleek design on turquoise waters -->
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500" 
+                             alt="Cranchi Z35 sport yacht" 
+                             class="w-full h-64 object-cover">
+                        
+                        <div class="absolute top-4 left-4 bg-ocean-blue text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <i class="fas fa-map-marker-alt mr-1"></i>Monopoli
+                        </div>
+                        
+                        <div class="absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-br from-ocean-cyan to-ocean-blue opacity-10 transform rotate-12 translate-x-10 translate-y-10"></div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-ocean-navy">Cranchi Z35</h3>
+                                <p class="text-gray-600">Sport Cruiser</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-black text-ocean-blue">€1,500</div>
+                                <div class="text-sm text-gray-500">al giorno</div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-4 mb-6">
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-ocean-navy">8</div>
+                                <div class="text-xs text-gray-500">Ospiti</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-ocean-navy">11m</div>
+                                <div class="text-xs text-gray-500">Lunghezza</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-ocean-navy">1</div>
+                                <div class="text-xs text-gray-500">Cabina</div>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <button class="flex-1 bg-ocean-blue text-white py-3 rounded-full font-semibold hover:bg-ocean-navy transition-colors">
+                                Prenota
+                            </button>
+                            <button class="px-4 py-3 border-2 border-ocean-blue text-ocean-blue rounded-full hover:bg-ocean-blue hover:text-white transition-colors">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aventura 34 Catamarano -->
+                <div class="yacht-card bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-2" data-location="polignano">
+                    <div class="relative">
+                        <!-- Beautiful catamaran sailing with dual hulls cutting through blue Mediterranean waters -->
+                        <img src="https://pixabay.com/get/gc2ac4516576ec5670d77b7ede3102aa8a08a714c8d2c4374cc85e4c421c76f9cbc75a1cdec34286422cb0c2ba6370f68a4a4e3aac8fa00e4302fcb4add632a09_1280.jpg" 
+                             alt="Aventura 34 catamaran" 
+                             class="w-full h-64 object-cover">
+                        
+                        <div class="absolute top-4 left-4 bg-ocean-cyan text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <i class="fas fa-map-marker-alt mr-1"></i>Polignano a Mare
+                        </div>
+                        
+                        <div class="absolute top-4 right-4 bg-orange-400 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            FAMIGLIA
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-ocean-navy">Aventura 34</h3>
+                                <p class="text-gray-600">Catamarano</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-black text-ocean-blue">€2,800</div>
+                                <div class="text-sm text-gray-500">al giorno</div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-4 mb-6">
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-ocean-navy">10</div>
+                                <div class="text-xs text-gray-500">Ospiti</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-ocean-navy">10m</div>
+                                <div class="text-xs text-gray-500">Lunghezza</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-ocean-navy">2</div>
+                                <div class="text-xs text-gray-500">Cabine</div>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <button class="flex-1 bg-ocean-blue text-white py-3 rounded-full font-semibold hover:bg-ocean-navy transition-colors">
+                                Prenota
+                            </button>
+                            <button class="px-4 py-3 border-2 border-ocean-blue text-ocean-blue rounded-full hover:bg-ocean-blue hover:text-white transition-colors">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gozzo Mimi 9.5 -->
+                <div class="yacht-card bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-2" data-location="polignano">
+                    <div class="relative">
+                        <!-- Traditional Italian gozzo boat with classic Mediterranean styling -->
+                        <img src="https://pixabay.com/get/gc74500096da78b799736439ee510ef41b3866659ed485c106cac616db8c4681799a9d2abce8c2d4fb39617ed07223771d637fe04a8f49993bfe19ba853871bcf_1280.jpg" 
+                             alt="Gozzo Mimi traditional boat" 
+                             class="w-full h-64 object-cover">
+                        
+                        <div class="absolute top-4 left-4 bg-ocean-cyan text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <i class="fas fa-map-marker-alt mr-1"></i>Polignano a Mare
+                        </div>
+                        
+                        <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            TRADIZIONALE
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-ocean-navy">Gozzo Mimi 9.5</h3>
+                                <p class="text-gray-600">Gozzo Tradizionale</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-black text-ocean-blue">€1,200</div>
+                                <div class="text-sm text-gray-500">al giorno</div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-4 mb-6">
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-ocean-navy">8</div>
+                                <div class="text-xs text-gray-500">Ospiti</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-ocean-navy">9.5m</div>
+                                <div class="text-xs text-gray-500">Lunghezza</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-ocean-navy">-</div>
+                                <div class="text-xs text-gray-500">Giornaliero</div>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <button class="flex-1 bg-ocean-blue text-white py-3 rounded-full font-semibold hover:bg-ocean-navy transition-colors">
+                                Prenota
+                            </button>
+                            <button class="px-4 py-3 border-2 border-ocean-blue text-ocean-blue rounded-full hover:bg-ocean-blue hover:text-white transition-colors">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+
+            <!-- CTA Section -->
+            <div class="mt-16 text-center">
+                <div class="bg-gradient-to-r from-ocean-blue to-ocean-cyan rounded-3xl p-8 text-white relative overflow-hidden">
+                    <!-- Geometric Background -->
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full transform translate-x-16 -translate-y-16"></div>
+                    <div class="absolute bottom-0 left-0 w-24 h-24 bg-white opacity-10 transform rotate-45 -translate-x-12 translate-y-12"></div>
+                    
+                    <div class="relative z-10">
+                        <h3 class="text-3xl font-bold mb-4">Non trovi quello che cerchi?</h3>
+                        <p class="text-xl mb-6 opacity-90">Contattaci per soluzioni personalizzate e yacht esclusivi</p>
+                        <a href="https://wa.me/393895194113" class="bg-white text-ocean-blue px-8 py-4 rounded-full font-bold text-lg hover:bg-ocean-light transition-colors inline-block">
+                            <i class="fab fa-whatsapp mr-2"></i>Richiedi Preventivo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Fleet Section -->
+
+    <!-- @COMPONENT: Destinations Section -->
+    <section id="destinazioni" class="py-20 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <div class="relative inline-block">
+                    <div class="absolute -top-4 -right-4 w-8 h-8 bg-ocean-cyan transform rotate-45"></div>
+                    <h2 class="text-4xl lg:text-6xl font-black text-ocean-navy">
+                        DESTINAZIONI
+                        <span class="text-ocean-blue">ESCLUSIVE</span>
+                    </h2>
+                </div>
+                <p class="mt-6 text-xl text-gray-600 max-w-3xl mx-auto">
+                    Esplora le perle nascoste della costa pugliese, dalle grotte di Polignano alle acque cristalline di Santa Maria di Leuca
+                </p>
+            </div>
+
+            <!-- Destinations Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- @MAP: destinations.map(destination => ( -->
+                
+                <!-- Monopoli -->
+                <div class="destination-card group cursor-pointer">
+                    <div class="relative bg-ocean-light rounded-3xl overflow-hidden h-80 transform transition-all duration-300 group-hover:scale-105">
+                        <!-- Historic port town of Monopoli with ancient stone walls overlooking the Adriatic Sea -->
+                        <img src="https://pixabay.com/get/g68fd83955102f9468c058734c549ce1846dc065a8f08cf7250917792af100f0370b9ccd0093ffa7fa23a42e81b06025bdea4a8e23117c332552e9ba4afae4572_1280.jpg" 
+                             alt="Historic Monopoli coastline" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                        
+                        <!-- Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-ocean-navy/80 via-transparent to-transparent"></div>
+                        
+                        <!-- Content -->
+                        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-map-marker-alt mr-2"></i>
+                                <span class="text-sm font-semibold opacity-90">Costa Adriatica</span>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">Monopoli</h3>
+                            <p class="text-sm opacity-90 mb-4">Porto storico e acque cristalline</p>
+                            
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-semibold">3 yacht disponibili</span>
+                                <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-arrow-right text-sm"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Geometric Element -->
+                        <div class="absolute top-4 right-4 w-12 h-12 bg-ocean-blue/30 rounded-full"></div>
+                    </div>
+                </div>
+
+                <!-- Polignano a Mare -->
+                <div class="destination-card group cursor-pointer">
+                    <div class="relative bg-ocean-light rounded-3xl overflow-hidden h-80 transform transition-all duration-300 group-hover:scale-105">
+                        <!-- Dramatic limestone cliffs of Polignano a Mare with sea caves and turquoise waters -->
+                        <img src="https://pixabay.com/get/gb93b3387d9677302649c44119e009ead697fdcbbc1229feced61fa27872b92629d50c0faa2d0edf5edccbf0553ec5d242ff8263692155a864d4be52f02c0b344_1280.jpg" 
+                             alt="Polignano a Mare cliffs and caves" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                        
+                        <div class="absolute inset-0 bg-gradient-to-t from-ocean-navy/80 via-transparent to-transparent"></div>
+                        
+                        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-map-marker-alt mr-2"></i>
+                                <span class="text-sm font-semibold opacity-90">Costa Adriatica</span>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">Polignano a Mare</h3>
+                            <p class="text-sm opacity-90 mb-4">Grotte marine e scogliere spettacolari</p>
+                            
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-semibold">2 yacht disponibili</span>
+                                <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-arrow-right text-sm"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="absolute top-4 right-4 w-12 h-12 bg-ocean-cyan/30 transform rotate-45"></div>
+                    </div>
+                </div>
+
+                <!-- Santa Maria di Leuca -->
+                <div class="destination-card group cursor-pointer">
+                    <div class="relative bg-ocean-light rounded-3xl overflow-hidden h-80 transform transition-all duration-300 group-hover:scale-105">
+                        <!-- Lighthouse of Santa Maria di Leuca at the meeting point of two seas -->
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                             alt="Santa Maria di Leuca lighthouse and coastline" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                        
+                        <div class="absolute inset-0 bg-gradient-to-t from-ocean-navy/80 via-transparent to-transparent"></div>
+                        
+                        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-map-marker-alt mr-2"></i>
+                                <span class="text-sm font-semibold opacity-90">Punta del Salento</span>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">S. Maria di Leuca</h3>
+                            <p class="text-sm opacity-90 mb-4">Il faro e l'incontro dei due mari</p>
+                            
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-semibold">3 yacht disponibili</span>
+                                <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-arrow-right text-sm"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="absolute top-4 right-4 w-12 h-12 bg-sand/50 rounded-full"></div>
+                    </div>
+                </div>
+
+                <!-- Gallipoli -->
+                <div class="destination-card group cursor-pointer">
+                    <div class="relative bg-ocean-light rounded-3xl overflow-hidden h-80 transform transition-all duration-300 group-hover:scale-105">
+                        <!-- Ancient walled city of Gallipoli surrounded by crystal clear Ionian Sea waters -->
+                        <img src="https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                             alt="Gallipoli old town and Ionian Sea" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                        
+                        <div class="absolute inset-0 bg-gradient-to-t from-ocean-navy/80 via-transparent to-transparent"></div>
+                        
+                        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-map-marker-alt mr-2"></i>
+                                <span class="text-sm font-semibold opacity-90">Mar Ionio</span>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">Gallipoli</h3>
+                            <p class="text-sm opacity-90 mb-4">Città antica e spiagge dorate</p>
+                            
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-semibold">1 yacht disponibile</span>
+                                <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-arrow-right text-sm"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="absolute top-4 right-4 w-16 h-16 bg-ocean-blue/20 transform rotate-45"></div>
+                    </div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Destinations Section -->
+
+    <!-- @COMPONENT: Services Section -->
+    <section id="servizi" class="py-20 bg-gradient-to-br from-ocean-light to-white relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-ocean-blue opacity-5 rounded-full transform -translate-x-48 -translate-y-48"></div>
+            <div class="absolute bottom-0 right-0 w-80 h-80 bg-ocean-cyan opacity-5 transform translate-x-40 translate-y-40 rotate-45"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <div class="relative inline-block">
+                    <div class="absolute -top-4 -left-4 w-8 h-8 bg-ocean-blue transform rotate-45"></div>
+                    <h2 class="text-4xl lg:text-6xl font-black text-ocean-navy">
+                        SERVIZI
+                        <span class="text-ocean-blue">PREMIUM</span>
+                    </h2>
+                </div>
+                <p class="mt-6 text-xl text-gray-600 max-w-3xl mx-auto">
+                    Ogni dettaglio è curato per offrirti un'esperienza di navigazione senza compromessi
+                </p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- @MAP: services.map(service => ( -->
+                
+                <!-- Charter Personalizzato -->
+                <div class="service-card bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2">
+                    <div class="relative mb-6">
+                        <div class="w-16 h-16 bg-ocean-blue rounded-2xl flex items-center justify-center mb-4">
+                            <i class="fas fa-ship text-white text-2xl"></i>
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-8 h-8 bg-ocean-cyan opacity-30 rounded-full"></div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-ocean-navy mb-4">Charter Personalizzato</h3>
+                    <p class="text-gray-600 mb-6">
+                        Itinerari su misura per le tue esigenze, dalla cena romantica al tramonto 
+                        alle avventure in famiglia lungo la costa pugliese.
+                    </p>
+                    
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-ocean-blue mr-2"></i>
+                            Itinerari personalizzati
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-ocean-blue mr-2"></i>
+                            Skipper professionale
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-ocean-blue mr-2"></i>
+                            Flessibilità orari
+                        </li>
+                    </ul>
+                    
+                    <a href="#" class="inline-flex items-center text-ocean-blue font-semibold hover:text-ocean-navy">
+                        Scopri di più
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Servizio Catering -->
+                <div class="service-card bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2">
+                    <div class="relative mb-6">
+                        <div class="w-16 h-16 bg-ocean-cyan rounded-2xl flex items-center justify-center mb-4">
+                            <i class="fas fa-utensils text-white text-2xl"></i>
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-8 h-8 bg-sand opacity-60 transform rotate-45"></div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-ocean-navy mb-4">Servizio Catering</h3>
+                    <p class="text-gray-600 mb-6">
+                        Degusta i sapori autentici della Puglia a bordo con il nostro servizio 
+                        catering di alta qualità e prodotti locali.
+                    </p>
+                    
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-ocean-blue mr-2"></i>
+                            Prodotti locali
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-ocean-blue mr-2"></i>
+                            Menu personalizzati
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-ocean-blue mr-2"></i>
+                            Servizio a bordo
+                        </li>
+                    </ul>
+                    
+                    <a href="#" class="inline-flex items-center text-ocean-blue font-semibold hover:text-ocean-navy">
+                        Scopri di più
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Attività Acquatiche -->
+                <div class="service-card bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2">
+                    <div class="relative mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-ocean-blue to-ocean-cyan rounded-2xl flex items-center justify-center mb-4">
+                            <i class="fas fa-swimmer text-white text-2xl"></i>
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-8 h-8 bg-ocean-light border-2 border-ocean-blue rounded-full"></div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-ocean-navy mb-4">Attività Acquatiche</h3>
+                    <p class="text-gray-600 mb-6">
+                        Snorkeling, paddleboard, immersioni guidate e pesca sportiva 
+                        per vivere il mare in tutte le sue forme.
+                    </p>
+                    
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-ocean-blue mr-2"></i>
+                            Attrezzatura inclusa
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-ocean-blue mr-2"></i>
+                            Guide esperte
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-ocean-blue mr-2"></i>
+                            Per tutti i livelli
+                        </li>
+                    </ul>
+                    
+                    <a href="#" class="inline-flex items-center text-ocean-blue font-semibold hover:text-ocean-navy">
+                        Scopri di più
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Transfer e Shuttle -->
+                <div class="service-card bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2">
+                    <div class="relative mb-6">
+                        <div class="w-16 h-16 bg-ocean-navy rounded-2xl flex items-center justify-center mb-4">
+                            <i class="fas fa-route text-white text-2xl"></i>
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-8 h-8 bg-ocean-cyan opacity-30 rounded-full"></div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-ocean-navy mb-4">Transfer e Shuttle</h3>
+                    <p class="text-gray-600 mb-6">
+                        Servizio transfer da e per aeroporti, hotel e stazioni. 
+                        Ti portiamo comodamente al punto di imbarco.
+                    </p>
+                    
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-ocean-blue mr-2"></i>
+                            Pickup ovunque
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-ocean-blue mr-2"></i>
+                            Veicoli confortevoli
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-ocean-blue mr-2"></i>
+                            Puntualità garantita
+                        </li>
+                    </ul>
+                    
+                    <a href="#" class="inline-flex items-center text-ocean-blue font-semibold hover:text-ocean-navy">
+                        Scopri di più
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Eventi Speciali -->
+                <div class="service-card bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2">
+                    <div class="relative mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-sand to-orange-300 rounded-2xl flex items-center justify-center mb-4">
+                            <i class="fas fa-glass-cheers text-white text-2xl"></i>
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-8 h-8 bg-ocean-blue opacity-20 transform rotate-45"></div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-ocean-navy mb-4">Eventi Speciali</h3>
+                    <p class="text-gray-600 mb-6">
+                        Compleanni, anniversari, addii al celibato/nubilato. 
+                        Organizziamo il tuo evento perfetto in mare.
+                    </p>
+                    
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-ocean-blue mr-2"></i>
+                            Decorazioni incluse
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-ocean-blue mr-2"></i>
+                            Fotografia/Video
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-ocean-blue mr-2"></i>
+                            Servizio completo
+                        </li>
+                    </ul>
+                    
+                    <a href="#" class="inline-flex items-center text-ocean-blue font-semibold hover:text-ocean-navy">
+                        Scopri di più
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Assistenza 24/7 -->
+                <div class="service-card bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2">
+                    <div class="relative mb-6">
+                        <div class="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center mb-4">
+                            <i class="fas fa-headset text-white text-2xl"></i>
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-8 h-8 bg-green-200 rounded-full"></div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-ocean-navy mb-4">Assistenza 24/7</h3>
+                    <p class="text-gray-600 mb-6">
+                        Il nostro team è sempre disponibile per qualsiasi necessità 
+                        durante la tua esperienza in mare.
+                    </p>
+                    
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-ocean-blue mr-2"></i>
+                            Supporto continuo
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-ocean-blue mr-2"></i>
+                            WhatsApp dedicato
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-ocean-blue mr-2"></i>
+                            Emergenze coperte
+                        </li>
+                    </ul>
+                    
+                    <a href="#" class="inline-flex items-center text-ocean-blue font-semibold hover:text-ocean-navy">
+                        Scopri di più
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Services Section -->
+
+    <!-- @COMPONENT: Reviews Section -->
+    <section class="py-20 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <div class="relative inline-block">
+                    <div class="absolute -top-4 -right-4 w-8 h-8 bg-sand transform rotate-45"></div>
+                    <h2 class="text-4xl lg:text-6xl font-black text-ocean-navy">
+                        COSA DICONO
+                        <span class="text-ocean-blue">I CLIENTI</span>
+                    </h2>
+                </div>
+                <p class="mt-6 text-xl text-gray-600 max-w-3xl mx-auto">
+                    Le recensioni autentiche di chi ha vissuto l'esperienza Saltiness
+                </p>
+            </div>
+
+            <!-- Reviews Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- @MAP: reviews.map(review => ( -->
+                
+                <!-- Review 1 -->
+                <div class="review-card bg-ocean-light rounded-3xl p-8 relative">
+                    <!-- Geometric Element -->
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-ocean-blue opacity-10 rounded-full transform translate-x-8 -translate-y-8"></div>
+                    
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-ocean-blue rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            M
+                        </div>
+                        <div>
+                            <div class="font-semibold text-ocean-navy">Melaniya</div>
+                            <div class="text-sm text-gray-600">Giugno 2025</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        "Experiencing Puglia from the source and one of the best things you could do if you are visiting this side of Italy. If you need to tailor it in anyway you want Nicolò is your guy."
+                    </p>
+                    
+                    <div class="text-sm text-ocean-blue font-semibold">
+                        <i class="fas fa-ship mr-1"></i>SunSeeker 68S
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card bg-white border-2 border-ocean-light rounded-3xl p-8 relative">
+                    <div class="absolute top-0 right-0 w-12 h-12 bg-ocean-cyan opacity-20 transform rotate-45 translate-x-6 -translate-y-6"></div>
+                    
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-ocean-cyan rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            B
+                        </div>
+                        <div>
+                            <div class="font-semibold text-ocean-navy">B B</div>
+                            <div class="text-sm text-gray-600">Giugno 2025</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        "Beautiful boat, Gozzo Seesee. Great hosts, accommodating to children and knowledgeable, thank you for a lovely tour!"
+                    </p>
+                    
+                    <div class="text-sm text-ocean-blue font-semibold">
+                        <i class="fas fa-ship mr-1"></i>Gozzo Tradizionale
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card bg-gradient-to-br from-ocean-blue to-ocean-cyan text-white rounded-3xl p-8 relative">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-white opacity-10 rounded-full transform translate-x-10 -translate-y-10"></div>
+                    
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            A
+                        </div>
+                        <div>
+                            <div class="font-semibold">Alex Hewitt</div>
+                            <div class="text-sm opacity-90">Settembre 2024</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-300">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <p class="leading-relaxed mb-4 opacity-95">
+                        "Nico arranged a great boat trip for us from Polignano a Mare to Monopoli and back, with stops to swim, snorkel, and paddleboard along the way. Highly recommend!"
+                    </p>
+                    
+                    <div class="text-sm font-semibold opacity-90">
+                        <i class="fas fa-ship mr-1"></i>Tour Personalizzato
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="review-card bg-ocean-light rounded-3xl p-8 relative">
+                    <div class="absolute top-0 right-0 w-14 h-14 bg-sand opacity-60 transform rotate-45 translate-x-7 -translate-y-7"></div>
+                    
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-sand rounded-full flex items-center justify-center text-ocean-navy font-bold mr-4">
+                            A
+                        </div>
+                        <div>
+                            <div class="font-semibold text-ocean-navy">Antonio Altobello</div>
+                            <div class="text-sm text-gray-600">Agosto 2024</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        "Abbiamo fatto un bellissimo tour, siamo soddisfatti al 100%. Splendidi ragazzi. Lo consigliamo vivamente!"
+                    </p>
+                    
+                    <div class="text-sm text-ocean-blue font-semibold">
+                        <i class="fas fa-ship mr-1"></i>Cranchi Z35
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="review-card bg-white border-2 border-ocean-light rounded-3xl p-8 relative">
+                    <div class="absolute top-0 right-0 w-10 h-10 bg-ocean-blue opacity-20 rounded-full transform translate-x-5 -translate-y-5"></div>
+                    
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            E
+                        </div>
+                        <div>
+                            <div class="font-semibold text-ocean-navy">Elena Constantinescu</div>
+                            <div class="text-sm text-gray-600">Ottobre 2024</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        "Great vacation! Definitely recommend! The crew was professional and the yacht was in perfect condition."
+                    </p>
+                    
+                    <div class="text-sm text-ocean-blue font-semibold">
+                        <i class="fas fa-ship mr-1"></i>Abacus 62
+                    </div>
+                </div>
+
+                <!-- Review 6 -->
+                <div class="review-card bg-ocean-light rounded-3xl p-8 relative">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-ocean-cyan opacity-10 rounded-full transform translate-x-8 -translate-y-8"></div>
+                    
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            D
+                        </div>
+                        <div>
+                            <div class="font-semibold text-ocean-navy">Daniele Recchia</div>
+                            <div class="text-sm text-gray-600">Settembre 2024</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        "Ottima esperienza, personale qualificato e attento alle esigenze del cliente. Paesaggi mozzafiato!"
+                    </p>
+                    
+                    <div class="text-sm text-ocean-blue font-semibold">
+                        <i class="fas fa-ship mr-1"></i>Jeanneau Prestige 42
+                    </div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+
+            <!-- Google Reviews CTA -->
+            <div class="mt-16 text-center">
+                <div class="bg-white border-2 border-ocean-light rounded-3xl p-8 inline-block">
+                    <div class="flex items-center justify-center mb-4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" class="w-8 h-8 mr-3">
+                        <span class="text-2xl font-bold text-ocean-navy">5.0</span>
+                        <div class="flex text-yellow-400 ml-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">Basato su 17 recensioni Google</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Google&query_place_id=ChIJeUmB0qI1RhMRY0KXlePyfjg" 
+                       class="text-ocean-blue font-semibold hover:text-ocean-navy">
+                        Vedi tutte le recensioni <i class="fas fa-external-link-alt ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Reviews Section -->
+
+    <!-- @COMPONENT: Contact Section -->
+    <section id="contatti" class="py-20 bg-gradient-to-br from-ocean-navy to-ocean-blue text-white relative overflow-hidden">
+        <!-- Background Shapes -->
+        <div class="absolute inset-0">
+            <div class="absolute top-0 left-0 w-64 h-64 bg-white opacity-5 rounded-full transform -translate-x-32 -translate-y-32"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-ocean-cyan opacity-10 transform translate-x-48 translate-y-48 rotate-45"></div>
+            <div class="absolute top-1/2 left-1/2 w-32 h-32 bg-sand opacity-20 transform -translate-x-16 -translate-y-16 rotate-12"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <div class="relative inline-block">
+                    <div class="absolute -top-4 -left-4 w-8 h-8 bg-sand transform rotate-45"></div>
+                    <h2 class="text-4xl lg:text-6xl font-black">
+                        PRENOTA LA TUA
+                        <span class="text-ocean-cyan">ESPERIENZA</span>
+                    </h2>
+                </div>
+                <p class="mt-6 text-xl opacity-90 max-w-3xl mx-auto">
+                    Siamo pronti a creare la tua avventura perfetta in mare. Contattaci per informazioni e prenotazioni.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Contact Info -->
+                <div>
+                    <div class="space-y-8">
+                        <!-- Phone -->
+                        <div class="flex items-center group">
+                            <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-white/20 transition-colors">
+                                <i class="fas fa-phone text-2xl"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-lg">Telefono</div>
+                                <a href="tel:+393895194113" class="text-ocean-cyan hover:text-white text-xl font-bold">
+                                    +39 389 519 4113
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- WhatsApp -->
+                        <div class="flex items-center group">
+                            <div class="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-green-400 transition-colors">
+                                <i class="fab fa-whatsapp text-2xl"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-lg">WhatsApp</div>
+                                <a href="https://wa.me/393895194113" class="text-green-300 hover:text-white text-xl font-bold">
+                                    Chatta con noi
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex items-center group">
+                            <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-white/20 transition-colors">
+                                <i class="fas fa-envelope text-2xl"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-lg">Email</div>
+                                <a href="mailto:boat.tour23@gmail.com" class="text-ocean-cyan hover:text-white text-xl font-bold">
+                                    boat.tour23@gmail.com
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Address -->
+                        <div class="flex items-center group">
+                            <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-white/20 transition-colors">
+                                <i class="fas fa-map-marker-alt text-2xl"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-lg">Indirizzo</div>
+                                <p class="text-white/90 text-lg">
+                                    Via Aurelio Sereno 4<br>
+                                    70043 Monopoli (BA)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="mt-12 space-y-4">
+                        <a href="https://wa.me/393895194113" 
+                           class="w-full bg-green-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-green-400 transition-colors flex items-center justify-center">
+                            <i class="fab fa-whatsapp mr-3 text-xl"></i>
+                            Prenota via WhatsApp
+                        </a>
+                        
+                        <a href="tel:+393895194113" 
+                           class="w-full border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-ocean-navy transition-colors flex items-center justify-center">
+                            <i class="fas fa-phone mr-3"></i>
+                            Chiama Ora
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Booking Form -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8">
+                    <h3 class="text-2xl font-bold mb-6">Richiesta Rapida</h3>
+                    
+                    <form class="space-y-6">
+                        <!-- @FUNCTIONALITY: Form should collect basic booking information and send via email or WhatsApp -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Nome</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-full bg-white/20 border border-white/30 text-white placeholder-white/70 focus:border-white focus:outline-none" 
+                                       placeholder="Il tuo nome" data-mock="true">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Telefono</label>
+                                <input type="tel" class="w-full px-4 py-3 rounded-full bg-white/20 border border-white/30 text-white placeholder-white/70 focus:border-white focus:outline-none" 
+                                       placeholder="+39 xxx xxx xxxx" data-mock="true">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-3 rounded-full bg-white/20 border border-white/30 text-white placeholder-white/70 focus:border-white focus:outline-none" 
+                                   placeholder="email@esempio.com" data-mock="true">
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Data</label>
+                                <input type="date" class="w-full px-4 py-3 rounded-full bg-white/20 border border-white/30 text-white focus:border-white focus:outline-none" data-mock="true">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Ospiti</label>
+                                <select class="w-full px-4 py-3 rounded-full bg-white/20 border border-white/30 text-white focus:border-white focus:outline-none" data-mock="true">
+                                    <option>1-4 persone</option>
+                                    <option>5-8 persone</option>
+                                    <option>9-12 persone</option>
+                                    <option>12+ persone</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Destinazione Preferita</label>
+                            <select class="w-full px-4 py-3 rounded-full bg-white/20 border border-white/30 text-white focus:border-white focus:outline-none" data-mock="true">
+                                <option>Monopoli</option>
+                                <option>Polignano a Mare</option>
+                                <option>Santa Maria di Leuca</option>
+                                <option>Gallipoli</option>
+                                <option>Tour personalizzato</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Messaggio (Opzionale)</label>
+                            <textarea rows="3" class="w-full px-4 py-3 rounded-2xl bg-white/20 border border-white/30 text-white placeholder-white/70 focus:border-white focus:outline-none resize-none" 
+                                      placeholder="Raccontaci cosa hai in mente..." data-mock="true"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-ocean-cyan text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-ocean-navy transition-colors">
+                            Invia Richiesta
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Contact Section -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-ocean-navy text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Brand -->
+                <div class="md:col-span-2">
+                    <div class="text-3xl font-black mb-4">SALTINESS</div>
+                    <p class="text-white/80 mb-6 max-w-md">
+                        Apulian Experience - Vivi la magia della Puglia attraverso esperienze nautiche 
+                        indimenticabili nelle acque cristalline del Mar Adriatico e Ionio.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://wa.me/393895194113" class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-400 transition-colors">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com/saltiness_apulian_experience/" class="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center hover:bg-pink-400 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/saltiness.apulianexperience" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Link Rapidi</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#flotta" class="text-white/80 hover:text-white transition-colors">La Nostra Flotta</a></li>
+                        <li><a href="#destinazioni" class="text-white/80 hover:text-white transition-colors">Destinazioni</a></li>
+                        <li><a href="#servizi" class="text-white/80 hover:text-white transition-colors">Servizi</a></li>
+                        <li><a href="#contatti" class="text-white/80 hover:text-white transition-colors">Contatti</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Contatti</h4>
+                    <ul class="space-y-2 text-white/80">
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-2"></i>
+                            <a href="tel:+393895194113" class="hover:text-white transition-colors">+39 389 519 4113</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <a href="mailto:boat.tour23@gmail.com" class="hover:text-white transition-colors">boat.tour23@gmail.com</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mr-2 mt-1"></i>
+                            <span>Via Aurelio Sereno 4<br>70043 Monopoli (BA)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 mt-8 pt-8 text-center text-white/60">
+                <p>&copy; 2024 Saltiness - Apulian Experience. Tutti i diritti riservati.</p>
+                <p class="mt-2">P.IVA: 08908110722</p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <!-- WhatsApp Floating Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/393895194113" class="group">
+            <div class="bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-400 transition-all transform hover:scale-110 flex items-center">
+                <i class="fab fa-whatsapp text-2xl"></i>
+                <span class="ml-3 font-semibold hidden group-hover:block whitespace-nowrap">Chatta con noi!</span>
+            </div>
+        </a>
+    </div>
+
+    <script>
+        (function() {
+            // Location filtering functionality
+            const locationButtons = document.querySelectorAll('.location-btn');
+            const yachtCards = document.querySelectorAll('.yacht-card');
+            
+            locationButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const selectedLocation = button.getAttribute('data-location');
+                    
+                    // Update button states
+                    locationButtons.forEach(btn => {
+                        btn.classList.remove('bg-ocean-blue', 'text-white');
+                        btn.classList.add('bg-white', 'text-ocean-blue', 'border-2', 'border-ocean-blue');
+                    });
+                    
+                    button.classList.remove('bg-white', 'text-ocean-blue', 'border-2', 'border-ocean-blue');
+                    button.classList.add('bg-ocean-blue', 'text-white');
+                    
+                    // Filter yacht cards
+                    yachtCards.forEach(card => {
+                        const cardLocation = card.getAttribute('data-location');
+                        if (selectedLocation === 'all' || cardLocation === selectedLocation) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Form submission handler
+            const contactForm = document.querySelector('form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // TODO: Implement form submission logic
+                    alert('Grazie per la tua richiesta! Ti contatteremo presto.');
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
