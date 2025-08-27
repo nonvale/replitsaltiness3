@@ -1,12 +1,12 @@
 export default function Footer() {
   return (
-    <footer className="bg-ocean-navy text-white py-12">
+  <footer className="bg-ocean-navy/80 text-ocean-navy py-12 relative z-50 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="text-3xl font-black mb-4">SALTINESS</div>
-            <p className="text-white/80 mb-6 max-w-md">
+            <div className="text-3xl font-black mb-4 text-ocean-navy">SALTINESS</div>
+            <p className="text-ocean-navy mb-6 max-w-md">
               Apulian Experience - Vivi la magia della Puglia attraverso esperienze nautiche 
               indimenticabili nelle acque cristalline del Mar Adriatico e Ionio.
             </p>
@@ -25,36 +25,36 @@ export default function Footer() {
           
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold text-lg mb-4">Link Rapidi</h4>
+            <h4 className="font-bold text-lg mb-4 text-ocean-navy">Link Rapidi</h4>
             <ul className="space-y-2">
-              <li><a href="/fleet" className="text-white/80 hover:text-white transition-colors">La Nostra Flotta</a></li>
-              <li><a href="#destinazioni" className="text-white/80 hover:text-white transition-colors">Destinazioni</a></li>
-              <li><a href="#servizi" className="text-white/80 hover:text-white transition-colors">Servizi</a></li>
-              <li><a href="#contatti" className="text-white/80 hover:text-white transition-colors">Contatti</a></li>
+              <li><a href="/fleet" className="text-ocean-navy hover:text-ocean-blue transition-colors">La Nostra Flotta</a></li>
+              <li><a href="#destinazioni" className="text-ocean-navy hover:text-ocean-blue transition-colors">Destinazioni</a></li>
+              <li><a href="#servizi" className="text-ocean-navy hover:text-ocean-blue transition-colors">Servizi</a></li>
+              <li><a href="#contatti" className="text-ocean-navy hover:text-ocean-blue transition-colors">Contatti</a></li>
             </ul>
           </div>
           
           {/* Contact Info */}
           <div>
-            <h4 className="font-bold text-lg mb-4">Contatti</h4>
-            <ul className="space-y-2 text-white/80">
+            <h4 className="font-bold text-lg mb-4 text-ocean-navy">Contatti</h4>
+            <ul className="space-y-2 text-ocean-navy">
               <li className="flex items-center">
                 <i className="fas fa-phone mr-2"></i>
-                <a href="tel:+393895194113" className="hover:text-white transition-colors">+39 389 519 4113</a>
+                <a href="tel:+393895194113" className="text-ocean-navy hover:text-ocean-blue transition-colors">+39 389 519 4113</a>
               </li>
               <li className="flex items-center">
                 <i className="fas fa-envelope mr-2"></i>
-                <a href="mailto:boat.tour23@gmail.com" className="hover:text-white transition-colors">boat.tour23@gmail.com</a>
+                <a href="mailto:boat.tour23@gmail.com" className="text-ocean-navy hover:text-ocean-blue transition-colors">boat.tour23@gmail.com</a>
               </li>
               <li className="flex items-start">
                 <i className="fas fa-map-marker-alt mr-2 mt-1"></i>
-                <span>Via Aurelio Sereno 4<br />70043 Monopoli (BA)</span>
+                <span className="text-ocean-navy">Via Aurelio Sereno 4<br />70043 Monopoli (BA)</span>
               </li>
             </ul>
           </div>
         </div>
         
-        <div className="border-t border-white/20 mt-8 pt-8 text-center text-white/60">
+        <div className="border-t border-white/20 mt-8 pt-8 text-center text-ocean-navy">
           <p>&copy; 2024 Saltiness - Apulian Experience. Tutti i diritti riservati.</p>
           <p className="mt-2">P.IVA: 08908110722</p>
         </div>

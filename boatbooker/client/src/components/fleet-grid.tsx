@@ -96,7 +96,7 @@ export default function FleetGrid({ yachts, showFilters = true }: FleetGridProps
       <div className="mb-8">
         <p className="text-gray-600">
           {filteredYachts.length === 0 
-            ? t('filters.no_results')
+            ? <span className="text-ocean-navy font-bold z-[100]">{t('filters.no_results')}</span>
             : `${filteredYachts.length} ${t('filters.results')}`
           }
         </p>
@@ -108,7 +108,7 @@ export default function FleetGrid({ yachts, showFilters = true }: FleetGridProps
           <div className="text-6xl text-gray-300 mb-4">
             <i className="fas fa-search"></i>
           </div>
-          <h3 className="text-xl font-semibold text-gray-600 mb-2">{t('filters.no_results')}</h3>
+          <h3 className="text-xl font-semibold text-ocean-navy mb-2 z-[100]">{t('filters.no_results')}</h3>
           <p className="text-gray-500">{t('filters.modify_filters')}</p>
         </div>
       ) : (

@@ -6,9 +6,9 @@ interface DestinationCardProps {
 
 export default function DestinationCard({ destination }: DestinationCardProps) {
   const handleCardClick = () => {
-    // Navigate to fleet page with location filter
+    // Naviga su /fleet con filtro location come query param
     window.location.href = `/fleet?location=${destination.id}`;
-  };
+  }
 
   return (
     <div 

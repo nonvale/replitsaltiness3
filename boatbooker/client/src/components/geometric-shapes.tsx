@@ -2,7 +2,7 @@ export default function GeometricShapes() {
   return (
     <>
       {/* Background Geometric Elements - Shapes Theme Style */}
-      <div className="fixed inset-0 pointer-events-none z-[5] overflow-hidden">
+  <div className="fixed inset-0 pointer-events-none z-[0] overflow-hidden">
         {/* Top Left Area */}
         <div className="absolute top-20 left-10 w-32 h-32 bg-ocean-light geometric-circle opacity-30 float-animation"></div>
         <div className="absolute top-40 left-32 w-16 h-16 bg-ocean-cyan opacity-20 geometric-square"></div>
@@ -40,7 +40,7 @@ export default function GeometricShapes() {
       </div>
 
       {/* Shapes Theme signature gradient overlay */}
-      <div className="fixed inset-0 pointer-events-none z-[3] shapes-hero-overlay"></div>
+  <div className="fixed inset-0 pointer-events-none z-[-1] shapes-hero-overlay"></div>
     </>
   );
 }

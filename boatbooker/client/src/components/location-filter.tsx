@@ -11,7 +11,7 @@ export default function LocationFilter({ selectedLocation, onLocationChange }: L
   
   return (
     <div className="mt-8">
-      <p className="text-sm font-semibold text-gray-500 mb-4">{t('hero.choose_destination')}</p>
+  {/* Scritta rimossa su richiesta */}
     </div>
   );
 }

@@ -75,10 +75,12 @@
 
   body {
     @apply font-display antialiased bg-background text-foreground;
+    overflow-x: hidden;
   }
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 }
 

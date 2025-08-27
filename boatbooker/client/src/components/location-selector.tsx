@@ -13,7 +13,7 @@ export default function LocationSelector({ selectedLocation, onLocationChange, s
   return (
     <div className="mb-12">
       <div className="text-center mb-8">
-        <h3 className="text-2xl font-bold text-ocean-navy mb-4">{t('hero.choose_destination')}</h3>
+  <h3 className="text-2xl font-bold text-ocean-navy mb-4">{t('hero.choose_destination')}</h3>
         <p className="text-gray-600">{t('destinations.page_subtitle')}</p>
       </div>
       

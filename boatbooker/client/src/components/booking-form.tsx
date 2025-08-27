@@ -203,16 +203,16 @@ export default function BookingForm({ yacht }: BookingFormProps) {
             name="guests"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Numero di Ospiti</FormLabel>
+                <FormLabel className="text-ocean-blue">Numero di Ospiti</FormLabel>
                 <Select onValueChange={(value) => field.onChange(parseInt(value))} value={field.value?.toString()}>
                   <FormControl>
-                    <SelectTrigger>
+                    <SelectTrigger className="text-ocean-blue border-ocean-blue focus:ring-ocean-blue">
                       <SelectValue placeholder="Seleziona numero ospiti" />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
                     {Array.from({ length: yacht.capacity }, (_, i) => i + 1).map((num) => (
-                      <SelectItem key={num} value={num.toString()}>
+                      <SelectItem key={num} value={num.toString()} className="text-ocean-blue">
                         {num} {num === 1 ? 'ospite' : 'ospiti'}
                       </SelectItem>
                     ))}
