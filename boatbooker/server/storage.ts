@@ -46,13 +46,13 @@ export class MemStorage implements IStorage {
   }
 
   private initializeData() {
-    // Initialize destinations
+    // Immagini locali per le destinazioni
     const destinations: Destination[] = [
       {
         id: "monopoli",
         name: "Monopoli",
         description: "Porto storico e acque cristalline della costa adriatica",
-        image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&w=800&h=600",
+        image: "/attached_assets/monopoli.jpg",
         coordinates: { lat: 40.9536, lng: 17.3036 },
         yachtCount: 4
       },
@@ -60,7 +60,7 @@ export class MemStorage implements IStorage {
         id: "polignano",
         name: "Polignano a Mare",
         description: "Grotte marine spettacolari e scogliere a picco sul mare",
-        image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&w=800&h=600",
+        image: "/attached_assets/polignano.jpg",
         coordinates: { lat: 40.9979, lng: 17.2188 },
         yachtCount: 3
       },
@@ -68,7 +68,7 @@ export class MemStorage implements IStorage {
         id: "leuca",
         name: "Santa Maria di Leuca",
         description: "Il faro storico dove si incontrano l'Adriatico e lo Ionio",
-        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&w=800&h=600",
+        image: "/attached_assets/leuca.jpg",
         coordinates: { lat: 39.7947, lng: 18.3581 },
         yachtCount: 3
       },
@@ -76,7 +76,7 @@ export class MemStorage implements IStorage {
         id: "gallipoli",
         name: "Gallipoli",
         description: "Città antica circondata dalle acque cristalline del Mar Ionio",
-        image: "https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?ixlib=rb-4.0.3&w=800&h=600",
+        image: "/attached_assets/gallipoli.jpg",
         coordinates: { lat: 40.0559, lng: 17.9925 },
         yachtCount: 1
       }
@@ -84,118 +84,175 @@ export class MemStorage implements IStorage {
 
     destinations.forEach(dest => this.destinations.set(dest.id, dest));
 
-    // Initialize yachts with real data from competitors
+      // Mappa immagini per nome barca
+      const yachtImages: Record<string, string[]> = {
+        "Abacus 62": [
+          "/attached_assets/abacus.jpg",
+          "/attached_assets/abacus2.jpg",
+          "/attached_assets/abacus3.jpg",
+          "/attached_assets/abacus4.jpg",
+          "/attached_assets/abacus5.jpg"
+        ],
+        "Gozzo Mimi 9.5": [
+          "/attached_assets/IMG-20250607-WA0027.jpg",
+          "/attached_assets/IMG-20250607-WA0028.jpg",
+          "/attached_assets/IMG-20250607-WA0029.jpg",
+          "/attached_assets/IMG-20250607-WA0030.jpg",
+          "/attached_assets/IMG-20250607-WA0031.jpg",
+          "/attached_assets/IMG-20250607-WA0032.jpg"
+        ],
+        "Gozzo Seesee": [
+          "/attached_assets/IMG-20250607-WA0027.jpg",
+          "/attached_assets/IMG-20250607-WA0028.jpg",
+          "/attached_assets/IMG-20250607-WA0029.jpg",
+          "/attached_assets/IMG-20250607-WA0030.jpg",
+          "/attached_assets/IMG-20250607-WA0031.jpg",
+          "/attached_assets/IMG-20250607-WA0032.jpg"
+        ],
+        "SunSeeker 68S": [
+          "/attached_assets/sunseeker1.jpg",
+          "/attached_assets/sunseeker2.jpg",
+          "/attached_assets/sunseeker3.jpg",
+          "/attached_assets/sunseeker4.jpg",
+          "/attached_assets/sunseeker5.jpg",
+          "/attached_assets/sunseeker6.jpg",
+          "/attached_assets/sunseeker7.jpg",
+          "/attached_assets/sunseeker8.jpg",
+          "/attached_assets/sunseeker9.jpg",
+          "/attached_assets/sunseeker10.jpg"
+        ],
+        "SunSeeker 53 Portofino": [
+          "/attached_assets/sunseeker531.jpg",
+          "/attached_assets/sunseeker532.jpg",
+          "/attached_assets/sunseeker533.jpg",
+          "/attached_assets/sunseeker534.jpg",
+          "/attached_assets/sunseeker535.jpg",
+          "/attached_assets/sunseeker536.jpg",
+          "/attached_assets/sunseeker5312.jpg",
+          "/attached_assets/sunseeker5313.jpg"
+        ],
+        "Pershing 46": [
+          "/attached_assets/pershing1.jpg",
+          "/attached_assets/pershing2.jpg",
+          "/attached_assets/pershing3.jpg",
+          "/attached_assets/pershing4.jpg"
+        ],
+        "Sarnico 43": [
+          "/attached_assets/sarnico1.jpg",
+          "/attached_assets/sarnico2.jpg",
+          "/attached_assets/sarnico3.jpg",
+          "/attached_assets/sarnico4.jpg"
+        ],
+        "Oceanis 351": [
+          "/attached_assets/freetime.jpg"
+        ]
+      };
+
+
+    // Helper per generare uno slug id statico dal nome barca
+    function slugify(name: string) {
+      return name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+    }
+
     const yachts: Yacht[] = [
-      // Monopoli Fleet
       {
-        id: randomUUID(),
+        id: slugify("SunSeeker 68S"),
         name: "SunSeeker 68S",
         type: "motor",
         location: "monopoli",
         capacity: 12,
         length: "21.00",
-        cabins: 3,
-        pricePerDay: "5500.00",
-        images: [
-          "https://images.unsplash.com/photo-1540946485063-a40da27545f8?ixlib=rb-4.0.3&w=800&h=600",
-          "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?ixlib=rb-4.0.3&w=800&h=600"
-        ],
-        features: ["Flybridge", "Air Conditioning", "WiFi", "Sound System", "Water Toys", "Crew"],
-        description: "Luxury motor yacht perfetta per charter esclusivi lungo la costa pugliese. Dotata di ogni comfort per un'esperienza indimenticabile.",
+        cabins: 4,
+        pricePerDay: "",
+        images: yachtImages["SunSeeker 68S"] ?? [],
+        features: ["Luxury", "Flybridge", "Spacious Deck", "Premium Sound"],
+        description: "Yacht di lusso con ampi spazi e comfort per crociere indimenticabili.",
+        description_en: "Luxury yacht with large spaces and comfort for unforgettable cruises.",
         available: true,
-        createdAt: new Date()
+        createdAt: new Date(),
       },
       {
-        id: randomUUID(),
+        id: slugify("SunSeeker 53 Portofino"),
         name: "SunSeeker 53 Portofino",
         type: "motor",
         location: "monopoli",
         capacity: 10,
         length: "16.00",
-        cabins: 2,
-        pricePerDay: "2500.00",
-        images: [
-          "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&w=800&h=600",
-          "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&w=800&h=600"
-        ],
-        features: ["Flybridge", "Air Conditioning", "Sound System", "Swimming Platform"],
-        description: "Elegante motor yacht ideale per giornate in famiglia o con amici, con tutto il comfort SunSeeker.",
+        cabins: 3,
+        pricePerDay: "",
+        images: yachtImages["SunSeeker 53 Portofino"] ?? [],
+        features: ["Elegance", "Comfort", "Large Cockpit", "Modern Equipment"],
+        description: "Yacht elegante e confortevole per esplorare la costa pugliese.",
+        description_en: "Elegant and comfortable yacht to explore the Apulian coast.",
         available: true,
-        createdAt: new Date()
+        createdAt: new Date(),
       },
       {
-        id: randomUUID(),
+        id: slugify("Cranchi Z35"),
         name: "Cranchi Z35",
         type: "motor",
         location: "monopoli",
         capacity: 8,
         length: "11.70",
         cabins: 1,
-        pricePerDay: "1500.00",
-        images: [
-          "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&w=800&h=600"
-        ],
+        pricePerDay: "",
+        images: [],
         features: ["Sport Cruiser", "Swimming Platform", "Sound System", "Refrigerator"],
         description: "Sport cruiser dinamico e veloce, perfetto per esplorare la costa in libertà.",
+        description_en: "Dynamic and fast sport cruiser, perfect for exploring the coast in freedom.",
         available: true,
-        createdAt: new Date()
+        createdAt: new Date(),
       },
       {
-        id: randomUUID(),
+        id: slugify("Jeanneau Prestige 42 Fly"),
         name: "Jeanneau Prestige 42 Fly",
         type: "motor",
         location: "monopoli",
         capacity: 10,
         length: "13.86",
         cabins: 2,
-        pricePerDay: "2500.00",
-        images: [
-          "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?ixlib=rb-4.0.3&w=800&h=600"
-        ],
+        pricePerDay: "",
+        images: [],
         features: ["Flybridge", "Air Conditioning", "Large Cockpit", "Modern Interior"],
         description: "Motor yacht moderno con flybridge spazioso, ideale per charter di lusso.",
+        description_en: "Modern motor yacht with spacious flybridge, ideal for luxury charters.",
         available: true,
-        createdAt: new Date()
+        createdAt: new Date(),
       },
-
-      // Polignano Fleet
       {
-        id: randomUUID(),
+        id: slugify("Aventura 34 Catamarano"),
         name: "Aventura 34 Catamarano",
         type: "catamaran",
         location: "polignano",
         capacity: 10,
         length: "10.00",
         cabins: 2,
-        pricePerDay: "2800.00",
-        images: [
-          "https://pixabay.com/get/gc2ac4516576ec5670d77b7ede3102aa8a08a714c8d2c4374cc85e4c421c76f9cbc75a1cdec34286422cb0c2ba6370f68a4a4e3aac8fa00e4302fcb4add632a09_1280.jpg"
-        ],
+        pricePerDay: "",
+        images: yachtImages["Aventura 34 Catamarano"] ?? [],
         features: ["Stability", "Large Deck", "Shallow Draft", "Family Friendly"],
         description: "Catamarano stabile e spazioso, perfetto per famiglie e gruppi che amano il comfort.",
+        description_en: "Stable and spacious catamaran, perfect for families and groups who love comfort.",
         available: true,
-        createdAt: new Date()
+        createdAt: new Date(),
       },
       {
-        id: randomUUID(),
+        id: slugify("Abacus 62"),
         name: "Abacus 62",
         type: "motor",
         location: "polignano",
         capacity: 12,
         length: "19.00",
         cabins: 4,
-        pricePerDay: "5500.00",
-        images: [
-          "https://pixabay.com/get/g26483f24dfa27759dc869d83a416f3b09dd599ef12ff110722daa8bc1b5695c9385d7552a7f9069e06f4be2dc1d6796b8f25a7b031745c7b1af75361820fa9d8_1280.jpg"
-        ],
+        pricePerDay: "",
+        images: yachtImages["Abacus 62"] ?? [],
         features: ["Flybridge", "Luxury Interior", "Large Cockpit", "Navigation Equipment"],
         description: "Motor yacht di lusso per charter esclusivi lungo la costa pugliese.",
+        description_en: "Luxury motor yacht for exclusive charters along the Apulian coast.",
         available: true,
-        createdAt: new Date()
+        createdAt: new Date(),
       },
-      // Oceanis 351 - Monopoli
       {
-        id: randomUUID(),
+        id: slugify("Oceanis 351"),
         name: "Oceanis 351",
         type: "sailing",
         location: "monopoli",
@@ -203,147 +260,111 @@ export class MemStorage implements IStorage {
         length: "10.32",
         cabins: 3,
         pricePerDay: "",
-        images: [
-          "https://www.beneteau.com/sites/default/files/public/medias/images/Oceanis351_1.jpg",
-          "https://www.beneteau.com/sites/default/files/public/medias/images/Oceanis351_2.jpg"
-        ],
+        images: yachtImages["Oceanis 351"] ?? [],
         features: ["Timone a ruota", "GPS", "VHF", "Cucina", "Bagno", "Doccia", "Vele", "Ampio pozzetto"],
         description: "Barca a vela ideale per crociere in famiglia o tra amici, comfort e prestazioni ottimali. Partenza da Monopoli.",
+        description_en: "Sailboat ideal for family or friends cruises, optimal comfort and performance. Departure from Monopoli.",
         available: true,
-        createdAt: new Date()
+        createdAt: new Date(),
       },
       {
-        id: randomUUID(),
+        id: slugify("Gozzo Mimi 9.5"),
         name: "Gozzo Mimi 9.5",
         type: "gozzo",
         location: "polignano",
         capacity: 8,
         length: "9.50",
         cabins: 0,
-        pricePerDay: "1200.00",
-        images: [
-          "https://pixabay.com/get/gc74500096da78b799736439ee510ef41b3866659ed485c106cac616db8c4681799a9d2abce8c2d4fb39617ed07223771d637fe04a8f49993bfe19ba853871bcf_1280.jpg"
-        ],
+        pricePerDay: "",
+        images: yachtImages["Gozzo Mimi 9.5"] ?? [],
         features: ["Traditional Design", "Comfortable Seating", "Sun Awning", "Local Style"],
         description: "Gozzo tradizionale per vivere l'autentica esperienza del mare pugliese.",
+        description_en: "Traditional gozzo to experience the authentic Apulian sea.",
         available: true,
-        createdAt: new Date()
+        createdAt: new Date(),
       },
-
-      // Santa Maria di Leuca Fleet
       {
-        id: randomUUID(),
+        id: slugify("Mano Marine 38"),
         name: "Mano Marine 38",
         type: "motor",
         location: "leuca",
         capacity: 10,
         length: "11.50",
         cabins: 2,
-        pricePerDay: "2200.00",
-        images: [
-          "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&w=800&h=600"
-        ],
+        pricePerDay: "",
+        images: yachtImages["Mano Marine 38"] ?? [],
         features: ["Open Deck", "Swimming Platform", "Refrigerator", "Sound System"],
         description: "Motor yacht versatile per esplorare le acque del punto più a sud della Puglia.",
+        description_en: "Versatile motor yacht to explore the southernmost waters of Apulia.",
         available: true,
-        createdAt: new Date()
+        createdAt: new Date(),
       },
       {
-        id: randomUUID(),
+        id: slugify("Pershing 46"),
         name: "Pershing 46",
         type: "motor",
         location: "leuca",
         capacity: 10,
         length: "14.00",
         cabins: 2,
-        pricePerDay: "4500.00",
-        images: [
-          "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?ixlib=rb-4.0.3&w=800&h=600"
-        ],
+        pricePerDay: "",
+        images: yachtImages["Pershing 46"] ?? [],
         features: ["High Performance", "Luxury Interior", "Air Conditioning", "Premium Finish"],
         description: "Sport yacht ad alte performance per chi cerca velocità e lusso.",
+        description_en: "High performance sport yacht for those seeking speed and luxury.",
         available: true,
-        createdAt: new Date()
+        createdAt: new Date(),
       },
       {
-        id: randomUUID(),
+        id: slugify("Rizzardi Incredibile 45"),
         name: "Rizzardi Incredibile 45",
         type: "motor",
         location: "leuca",
         capacity: 12,
         length: "13.50",
         cabins: 2,
-        pricePerDay: "3800.00",
-        images: [
-          "https://images.unsplash.com/photo-1540946485063-a40da27545f8?ixlib=rb-4.0.3&w=800&h=600"
-        ],
+        pricePerDay: "",
+        images: yachtImages["Rizzardi Incredibile 45"] ?? [],
         features: ["Sport Design", "Large Cockpit", "High Speed", "Modern Equipment"],
         description: "Yacht sportivo dalle prestazioni incredibili per charter dinamici.",
+        description_en: "Sport yacht with incredible performance for dynamic charters.",
         available: true,
-        createdAt: new Date()
+        createdAt: new Date(),
       },
-
-      // Gallipoli Fleet
       {
-        id: randomUUID(),
+        id: slugify("Sarnico 43"),
         name: "Sarnico 43",
         type: "motor",
         location: "gallipoli",
         capacity: 10,
         length: "13.00",
         cabins: 2,
-        pricePerDay: "2800.00",
-        images: [
-          "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&w=800&h=600"
-        ],
+        pricePerDay: "",
+        images: yachtImages["Sarnico 43"] ?? [],
         features: ["Elegant Design", "Comfortable Interior", "Swimming Platform", "Sound System"],
         description: "Motor yacht elegante per esplorare la costa ionica di Gallipoli.",
+        description_en: "Elegant motor yacht to explore the Ionian coast of Gallipoli.",
         available: true,
-        createdAt: new Date()
+        createdAt: new Date(),
       }
     ];
 
+    // Popola la mappa this.yachts per renderli disponibili alle API
     yachts.forEach(yacht => this.yachts.set(yacht.id, yacht));
 
-    // Initialize some reviews
+    // Inizializza alcune recensioni
     const reviews: Review[] = [
-      {
+      // Associa le recensioni solo a barche esistenti
+      ...(yachts[0] ? [{
         id: randomUUID(),
         yachtId: yachts[0].id,
         customerName: "Melaniya",
         rating: 5,
         comment: "Experiencing Puglia from the source and one of the best things you could do if you are visiting this side of Italy. If you need to tailor it in anyway you want Nicolò is your guy.",
-        date: new Date("2025-06-08"),
-        verified: true
-      },
-      {
-        id: randomUUID(),
-        yachtId: yachts[6].id,
-        customerName: "B B",
-        rating: 5,
-        comment: "Beautiful boat, Gozzo Seesee. Great hosts, accommodating to children and knowledgeable, thank you for a lovely tour!",
-        date: new Date("2025-06-14"),
-        verified: true
-      },
-      {
-        id: randomUUID(),
-        yachtId: yachts[2].id,
-        customerName: "Alex Hewitt",
-        rating: 5,
-        comment: "Nico arranged a great boat trip for us from Polignano a Mare to Monopoli and back, with stops to swim, snorkel, and paddleboard along the way. Highly recommend",
-        date: new Date("2024-09-13"),
-        verified: true
-      },
-      {
-        id: randomUUID(),
-        yachtId: yachts[2].id,
-        customerName: "Antonio Altobello",
-        rating: 5,
-        comment: "Abbiamo fatto un bellissimo tour, siamo soddisfatti al 100%. Splendidi ragazzi. Lo consigliamo vivamente",
         date: new Date("2024-08-18"),
         verified: true
-      },
-      {
+      }] : []),
+      ...(yachts[1] ? [{
         id: randomUUID(),
         yachtId: yachts[1].id,
         customerName: "Elena Constantinescu",
@@ -351,16 +372,16 @@ export class MemStorage implements IStorage {
         comment: "Great vacation! Definitely recommend! The crew was professional and the yacht was in perfect condition.",
         date: new Date("2024-10-14"),
         verified: true
-      },
-      {
+      }] : []),
+      ...(yachts[2] ? [{
         id: randomUUID(),
-        yachtId: yachts[3].id,
+        yachtId: yachts[2].id,
         customerName: "Daniele Recchia",
         rating: 5,
         comment: "Ottima esperienza, personale qualificato e attento alle esigenze del cliente. Paesaggi mozzafiato!",
         date: new Date("2024-09-15"),
         verified: true
-      }
+      }] : [])
     ];
 
     reviews.forEach(review => this.reviews.set(review.id, review));
@@ -380,7 +401,14 @@ export class MemStorage implements IStorage {
 
   async createYacht(insertYacht: InsertYacht): Promise<Yacht> {
     const id = randomUUID();
-    const yacht: Yacht = { ...insertYacht, id, createdAt: new Date() };
+    const yacht: Yacht = {
+      ...insertYacht,
+      id,
+      createdAt: new Date(),
+      cabins: insertYacht.cabins ?? null,
+      description_en: insertYacht.description_en ?? null,
+      available: insertYacht.available ?? null,
+    };
     this.yachts.set(id, yacht);
     return yacht;
   }
@@ -399,7 +427,8 @@ export class MemStorage implements IStorage {
       ...insertBooking, 
       id, 
       status: "pending",
-      createdAt: new Date() 
+      createdAt: new Date(),
+      message: insertBooking.message ?? null,
     };
     this.bookings.set(id, booking);
     return booking;
@@ -428,7 +457,8 @@ export class MemStorage implements IStorage {
       ...insertReview, 
       id, 
       date: new Date(),
-      verified: false 
+      verified: false,
+      yachtId: insertReview.yachtId ?? null,
     };
     this.reviews.set(id, review);
     return review;

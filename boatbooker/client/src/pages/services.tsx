@@ -4,31 +4,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 export default function Services() {
   const { t } = useLanguage();
-  const servizi = [
-    {
-      key: 'charter_personalized',
-      features: [0, 1, 2]
-    },
-    {
-      key: 'catering',
-      features: [0, 1, 2]
-    },
-    {
-      key: 'water_activities',
-      features: [0, 1, 2]
-    },
-    {
-      key: 'transfer',
-      features: [0, 1, 2]
-    },
-    {
-      key: 'special_events',
-      features: [0, 1, 2]
-    },
-    {
-      key: 'assistance',
-      features: [0, 1, 2]
-    }
+  const services = [
+    { id: "charter_personalized", icon: "fas fa-star" },
+    { id: "catering", icon: "fas fa-utensils" },
+    { id: "water_activities", icon: "fas fa-swimmer" },
+    { id: "transfer", icon: "fas fa-shuttle-van" },
+    { id: "special_events", icon: "fas fa-glass-cheers" },
+    { id: "assistance", icon: "fas fa-headset" }
   ];
 
   return (
@@ -56,29 +38,28 @@ export default function Services() {
           </div>
         </section>
 
-        {/* Services Grid personalizzata con traduzioni */}
+        {/* Services Grid */}
         <section className="py-16 bg-white relative z-10 page-content">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {servizi.map((servizio, index) => (
+              {services.map((service, index) => (
                 <div key={index} className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 shapes-card-hover">
                   <div className="relative mb-6">
                     <div className="w-16 h-16 bg-ocean-blue rounded-2xl flex items-center justify-center mb-4">
-                      <i className="fas fa-check text-white text-2xl"></i>
+                      <i className={`${service.icon} text-white text-2xl`}></i>
                     </div>
                     <div className="absolute -top-2 -right-2 w-8 h-8 bg-ocean-cyan opacity-30 geometric-circle"></div>
                   </div>
-                  <h3 className="text-xl font-bold text-ocean-navy mb-4">{t(`service.${servizio.key}`)}</h3>
-                  <p className="text-gray-600 mb-6">{t(`service.${servizio.key}.description`)}</p>
+                  <h3 className="text-xl font-bold text-ocean-navy mb-4">{t(`services.${service.id.replace(/-/g, '_')}.title`)}</h3>
+                  <p className="text-gray-600 mb-6">{t(`services.${service.id.replace(/-/g, '_')}.description`)}</p>
                   <ul className="space-y-2 mb-6">
-                    {servizio.features.map((idx) => (
-                      <li key={idx} className="flex items-center text-sm text-gray-600">
+                    {[0,1,2,3].map((featureIndex) => (
+                      <li key={featureIndex} className="flex items-center text-sm text-gray-600">
                         <i className="fas fa-check text-ocean-blue mr-2"></i>
-                        {t(`service.${servizio.key}.features.${idx}`)}
+                        {t(`services.${service.id.replace(/-/g, '_')}.features.${featureIndex}`)}
                       </li>
                     ))}
                   </ul>
-                  <a href="#" className="text-ocean-blue font-semibold hover:underline">{t('services.learn_more')}</a>
                 </div>
               ))}
             </div>

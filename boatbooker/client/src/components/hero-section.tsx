@@ -28,11 +28,9 @@ export default function HeroSection() {
                 <span className="text-ocean-blue"> {t('hero.title_accent')}</span>
                 <br />{t('hero.title_end')}
               </h1>
+              <p className="mt-6 text-xl text-gray-600 max-w-2xl">{t('hero.subtitle')}</p>
+              {/* RIMOSSA SCRITTA SCEGLI LA TUA DESTINAZIONE */}
             </div>
-            
-            <p className="mt-6 text-xl text-gray-600 leading-relaxed">
-              {t('hero.subtitle')}
-            </p>
 
             {/* Location Filter */}
             <LocationFilter

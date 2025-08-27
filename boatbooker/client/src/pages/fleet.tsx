@@ -38,7 +38,7 @@ export default function Fleet() {
         <GeometricShapes />
 
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-ocean-light relative overflow-hidden z-10 hero-section">
+  <section className="pt-28 py-20 bg-gradient-ocean-light relative overflow-hidden z-10 hero-section">
           <div className="absolute inset-0 shapes-geometric-bg"></div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20">
@@ -113,7 +113,7 @@ export default function Fleet() {
             ) : (
               <div className="text-center py-20">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  {t('filters.no_results')}
+                  <span className="text-ocean-navy font-bold z-[100]">{t('filters.no_results')}</span>
                 </h3>
                 <p className="text-gray-600 mb-8">
                   {t('filters.modify_filters')}
@@ -124,13 +124,13 @@ export default function Fleet() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-ocean-blue text-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="py-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-white/70 backdrop-blur-md rounded-3xl py-10">
             <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-              {t('fleet.not_found_title')}
+              <span className="text-ocean-navy font-bold z-[100]">{t('fleet.not_found_title')}</span>
             </h2>
-            <p className="text-xl mb-8 text-ocean-light">
-              {t('fleet.not_found_subtitle')}
+            <p className="text-xl mb-8">
+              <span className="text-ocean-navy z-[100]">{t('fleet.not_found_subtitle')}</span>
             </p>
             <a
               href="/contacts"

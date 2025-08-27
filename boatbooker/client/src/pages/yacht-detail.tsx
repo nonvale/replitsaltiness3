@@ -20,7 +20,7 @@ export default function YachtDetail() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl font-bold text-ocean-navy mb-4 z-[100]">
             {t('filters.no_results')}
           </h2>
           <Button onClick={() => window.history.back()}>

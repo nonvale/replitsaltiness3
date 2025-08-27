@@ -15,6 +15,7 @@ export const yachts = pgTable("yachts", {
   images: text("images").array().notNull(),
   features: text("features").array().notNull(),
   description: text("description").notNull(),
+  description_en: text("description_en"),
   available: boolean("available").default(true),
   createdAt: timestamp("created_at").defaultNow(),
 });
