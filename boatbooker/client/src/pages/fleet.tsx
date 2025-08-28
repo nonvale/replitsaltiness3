@@ -38,7 +38,7 @@ export default function Fleet() {
         <GeometricShapes />
 
         {/* Hero Section */}
-  <section className="pt-28 py-20 bg-gradient-ocean-light relative overflow-hidden z-10 hero-section">
+  <section className="py-20 bg-gradient-ocean-light relative overflow-hidden z-10 hero-section pt-20">
           <div className="absolute inset-0 shapes-geometric-bg"></div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20">

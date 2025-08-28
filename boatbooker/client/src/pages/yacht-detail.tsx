@@ -39,7 +39,7 @@ export default function YachtDetail() {
         <GeometricShapes />
 
         {/* Hero Section with Yacht Images */}
-        <section className="py-20 bg-gradient-ocean-light relative overflow-hidden z-10 hero-section">
+  <section className="py-20 bg-gradient-ocean-light relative overflow-hidden z-10 hero-section pt-20">
           <div className="absolute inset-0 shapes-geometric-bg"></div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
@@ -84,14 +84,7 @@ export default function YachtDetail() {
                   </div>
                 </div>
 
-                <div className="mb-8">
-                  <div className="text-3xl font-bold text-ocean-navy">
-                    €{yacht.pricePerDay.toLocaleString()}
-                    <span className="text-lg text-gray-600 ml-2">
-                      {t('yacht.per_day')}
-                    </span>
-                  </div>
-                </div>
+
 
                 <div className="flex gap-4">
                   <Button 

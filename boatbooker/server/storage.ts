@@ -84,8 +84,8 @@ export class MemStorage implements IStorage {
 
     destinations.forEach(dest => this.destinations.set(dest.id, dest));
 
-      // Mappa immagini per nome barca
-      const yachtImages: Record<string, string[]> = {
+  // Mappa immagini per nome barca
+  const yachtImages: Record<string, string[]> = {
         "Abacus 62": [
           "/attached_assets/abacus.jpg",
           "/attached_assets/abacus2.jpg",

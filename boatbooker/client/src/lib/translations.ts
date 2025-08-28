@@ -217,6 +217,53 @@ export const translations = {
     'seo.contacts_description': 'Contattaci per prenotare il tuo charter yacht in Puglia. Assistenza professionale e preventivi personalizzati.'
   },
   en: {
+  // Charter Personalized
+  'services.charter_personalized.title': 'Personalized Charter',
+  'services.charter_personalized.description': 'Tailor-made itineraries for your needs, from romantic sunset dinners to family adventures along the Apulian coast.',
+  'services.charter_personalized.features.0': 'Custom itineraries',
+  'services.charter_personalized.features.1': 'Professional skipper',
+  'services.charter_personalized.features.2': 'Flexible schedules',
+  'services.charter_personalized.features.3': 'Learn more',
+
+  // Catering
+  'services.catering.title': 'Catering Service',
+  'services.catering.description': 'Taste the authentic flavors of Puglia on board with our high-quality catering service and local products.',
+  'services.catering.features.0': 'Local products',
+  'services.catering.features.1': 'Custom menus',
+  'services.catering.features.2': 'Onboard service',
+  'services.catering.features.3': 'Learn more',
+
+  // Water Activities
+  'services.water_activities.title': 'Water Activities',
+  'services.water_activities.description': 'Snorkeling, paddleboarding, guided diving, and sport fishing to experience the sea in all its forms.',
+  'services.water_activities.features.0': 'Equipment included',
+  'services.water_activities.features.1': 'Expert guides',
+  'services.water_activities.features.2': 'For all levels',
+  'services.water_activities.features.3': 'Learn more',
+
+  // Transfer
+  'services.transfer.title': 'Transfer & Shuttle',
+  'services.transfer.description': 'Transfer service to and from airports, hotels, and stations. We take you comfortably to the boarding point.',
+  'services.transfer.features.0': 'Pickup anywhere',
+  'services.transfer.features.1': 'Comfortable vehicles',
+  'services.transfer.features.2': 'Guaranteed punctuality',
+  'services.transfer.features.3': 'Learn more',
+
+  // Special Events
+  'services.special_events.title': 'Special Events',
+  'services.special_events.description': 'Birthdays, anniversaries, bachelor/bachelorette parties. We organize your perfect event at sea.',
+  'services.special_events.features.0': 'Decorations included',
+  'services.special_events.features.1': 'Photography/Video',
+  'services.special_events.features.2': 'Full service',
+  'services.special_events.features.3': 'Learn more',
+
+  // Assistance
+  'services.assistance.title': '24/7 Assistance',
+  'services.assistance.description': 'Our team is always available for any need during your experience at sea.',
+  'services.assistance.features.0': 'Continuous support',
+  'services.assistance.features.1': 'Dedicated WhatsApp',
+  'services.assistance.features.2': 'Emergency coverage',
+  'services.assistance.features.3': 'Learn more',
   // Services detailed keys
   'services.boat_rental.title': 'Boat Rental',
   'services.boat_rental.description': 'Rent the perfect boat for your experience in Puglia.',

@@ -47,7 +47,7 @@ export default function Booking() {
           <GeometricShapes />
 
           {/* Hero Section */}
-          <section className="py-20 bg-gradient-ocean-light relative overflow-hidden z-10 hero-section">
+          <section className="py-20 bg-gradient-ocean-light relative overflow-hidden z-10 hero-section pt-20">
             <div className="absolute inset-0 shapes-geometric-bg"></div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20">
@@ -113,12 +113,7 @@ export default function Booking() {
                       </div>
                     </div>
 
-                    <div className="mt-6 p-4 bg-ocean-light rounded-2xl">
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm text-gray-600">{t('booking.price_per_day')}</span>
-                        <span className="text-3xl font-bold text-ocean-blue">€{yacht.pricePerDay}</span>
-                      </div>
-                    </div>
+                    {/* prezzo rimosso su richiesta */}
                   </div>
                 </div>
 
