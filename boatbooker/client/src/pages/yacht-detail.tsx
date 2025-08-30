@@ -20,7 +20,7 @@ export default function YachtDetail() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-ocean-navy mb-4 z-[100]">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">
             {t('filters.no_results')}
           </h2>
           <Button onClick={() => window.history.back()}>
@@ -39,7 +39,7 @@ export default function YachtDetail() {
         <GeometricShapes />
 
         {/* Hero Section with Yacht Images */}
-  <section className="py-20 bg-gradient-ocean-light relative overflow-hidden z-10 hero-section pt-20">
+        <section className="py-20 bg-gradient-ocean-light relative overflow-hidden z-10 hero-section">
           <div className="absolute inset-0 shapes-geometric-bg"></div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
@@ -84,7 +84,14 @@ export default function YachtDetail() {
                   </div>
                 </div>
 
-
+                <div className="mb-8">
+                  <div className="text-3xl font-bold text-ocean-navy">
+                    €{yacht.pricePerDay.toLocaleString()}
+                    <span className="text-lg text-gray-600 ml-2">
+                      {t('yacht.per_day')}
+                    </span>
+                  </div>
+                </div>
 
                 <div className="flex gap-4">
                   <Button 
