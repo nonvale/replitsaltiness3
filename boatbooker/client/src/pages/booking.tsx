@@ -60,7 +60,7 @@ export default function Booking() {
               </div>
 
               <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                {t('booking.subtitle', { yachtName: yacht.name })}
+                {t('booking.subtitle')}
               </p>
             </div>
           </section>

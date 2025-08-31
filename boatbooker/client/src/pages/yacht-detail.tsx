@@ -20,7 +20,7 @@ export default function YachtDetail() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl font-bold text-ocean-navy mb-4 z-[100]">
             {t('filters.no_results')}
           </h2>
           <Button onClick={() => window.history.back()}>
@@ -32,14 +32,14 @@ export default function YachtDetail() {
   }
 
   const { language } = useLanguage();
-  // Visualizzazione statica: mostra sempre i dati originali in italiano, testo fisso in inglese
+  // Mostra descrizione e features nella lingua selezionata, se disponibili
   return (
     <>
       <div className="relative">
         <GeometricShapes />
 
         {/* Hero Section with Yacht Images */}
-        <section className="py-20 bg-gradient-ocean-light relative overflow-hidden z-10 hero-section">
+  <section className="py-20 bg-gradient-ocean-light relative overflow-hidden z-10 hero-section pt-20">
           <div className="absolute inset-0 shapes-geometric-bg"></div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
@@ -52,8 +52,8 @@ export default function YachtDetail() {
                   {yacht.name}
                 </h1>
                 <p className="text-xl text-gray-600 mb-8">
-                  {language === 'en'
-                    ? 'Contact us for details and features in English.'
+                  {language === 'en' && yacht.description_en
+                    ? yacht.description_en
                     : yacht.description}
                 </p>
 
@@ -84,14 +84,7 @@ export default function YachtDetail() {
                   </div>
                 </div>
 
-                <div className="mb-8">
-                  <div className="text-3xl font-bold text-ocean-navy">
-                    €{yacht.pricePerDay.toLocaleString()}
-                    <span className="text-lg text-gray-600 ml-2">
-                      {t('yacht.per_day')}
-                    </span>
-                  </div>
-                </div>
+
 
                 <div className="flex gap-4">
                   <Button 
@@ -131,18 +124,13 @@ export default function YachtDetail() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {language === 'en'
-                ? (
-                  <div className="text-center text-gray-500">Features available on request.</div>
-                ) : (
-                  yacht.features.map((feature, index) => (
-                    <Card key={index}>
-                      <CardContent className="p-6 text-center">
-                        <CardTitle className="text-lg mb-2">{feature}</CardTitle>
-                      </CardContent>
-                    </Card>
-                  ))
-                )}
+              {yacht.features.map((feature, index) => (
+                <Card key={index}>
+                  <CardContent className="p-6 text-center">
+                    <CardTitle className="text-lg mb-2">{feature}</CardTitle>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </section>

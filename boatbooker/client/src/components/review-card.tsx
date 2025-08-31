@@ -49,14 +49,15 @@ export default function ReviewCard({ review, index }: ReviewCardProps) {
   const textColor = isGradient ? "text-white" : "text-gray-700";
   const nameColor = isGradient ? "text-white" : "text-ocean-navy";
 
-  const formatDate = (date: Date) => {
+  const formatDate = (date: Date | null) => {
+    if (!date) return '';
     return new Intl.DateTimeFormat('it-IT', {
       month: 'long',
       year: 'numeric'
     }).format(new Date(date));
   };
 
-  const getYachtName = (yachtId?: string) => {
+  const getYachtName = (yachtId?: string | null) => {
     // This would typically come from yacht data, but we'll use a simple mapping
     const yachtNames: Record<string, string> = {
       "sunseeker-68s": "SunSeeker 68S",
@@ -81,7 +82,7 @@ export default function ReviewCard({ review, index }: ReviewCardProps) {
         <div>
           <div className={`font-semibold ${nameColor}`}>{review.customerName}</div>
           <div className={`text-sm ${isGradient ? 'opacity-90' : 'text-gray-600'}`}>
-            {formatDate(review.date)}
+            {formatDate(review.date ?? null)}
           </div>
         </div>
       </div>
@@ -100,7 +101,10 @@ export default function ReviewCard({ review, index }: ReviewCardProps) {
       
       <div className={`text-sm font-semibold ${isGradient ? 'opacity-90' : 'text-ocean-blue'}`}>
         <i className="fas fa-ship mr-1"></i>
-        {getYachtName(review.yachtId)}
+  {getYachtName(review.yachtId ?? null)}
+        {review.customerName.toLowerCase().includes('google') && (
+          <img src="/attached_assets/google.png" alt="Google" className="inline-block h-5 ml-2 align-text-bottom" />
+        )}
       </div>
     </div>
   );

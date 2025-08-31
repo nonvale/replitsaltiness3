@@ -86,12 +86,27 @@ export class MemStorage implements IStorage {
 
   // Mappa immagini per nome barca
   const yachtImages: Record<string, string[]> = {
-        "Abacus 62": [
-          "/attached_assets/abacus.jpg",
-          "/attached_assets/abacus2.jpg",
-          "/attached_assets/abacus3.jpg",
-          "/attached_assets/abacus4.jpg",
-          "/attached_assets/abacus5.jpg"
+  "Cranchi Z35": [
+    "/attached_assets/cranchi1.JPG",
+    "/attached_assets/cranchi2.jpg",
+    "/attached_assets/cranchi3.jpg",
+    "/attached_assets/cranchi7.jpg",
+    "/attached_assets/cranchi8.jpg",
+    "/attached_assets/cranchi9.jpg",
+    "/attached_assets/cranchi10.jpg"
+  ],
+  "Abacus 62": [
+    "/attached_assets/abacus1.jpg",
+    "/attached_assets/abacus2.jpg",
+    "/attached_assets/abacus3.jpg",
+    "/attached_assets/abacus4.jpg",
+    "/attached_assets/abacus5.jpg"
+  ],
+        "Aventura 34 Catamarano": [
+          "/attached_assets/catamarano1.jpeg",
+          "/attached_assets/catamarano2.jpeg",
+          "/attached_assets/catamarano3.jpeg",
+          "/attached_assets/catamarano4.JPG"
         ],
         "Gozzo Mimi 9.5": [
           "/attached_assets/IMG-20250607-WA0027.jpg",
@@ -100,6 +115,13 @@ export class MemStorage implements IStorage {
           "/attached_assets/IMG-20250607-WA0030.jpg",
           "/attached_assets/IMG-20250607-WA0031.jpg",
           "/attached_assets/IMG-20250607-WA0032.jpg"
+        ],
+        "Jeanneau Prestige 42 Fly": [
+          "/attached_assets/jeanneau1.jpg",
+          "/attached_assets/jeanneau2.jpg",
+          "/attached_assets/jeanneau3.jpg",
+          "/attached_assets/jeanneau4.jpg",
+          "/attached_assets/jeanneau5.jpg"
         ],
         "Gozzo Seesee": [
           "/attached_assets/IMG-20250607-WA0027.jpg",
@@ -162,10 +184,10 @@ export class MemStorage implements IStorage {
         location: "monopoli",
         capacity: 12,
         length: "21.00",
-        cabins: 4,
+        cabins: 3,
         pricePerDay: "",
         images: yachtImages["SunSeeker 68S"] ?? [],
-        features: ["Luxury", "Flybridge", "Spacious Deck", "Premium Sound"],
+        features: ["Luxury", "Garage", "Spacious Deck", "Premium Sound", "Wi-Fi", "Sea-Bob", "Jet-Ski"],
         description: "Yacht di lusso con ampi spazi e comfort per crociere indimenticabili.",
         description_en: "Luxury yacht with large spaces and comfort for unforgettable cruises.",
         available: true,
@@ -194,9 +216,9 @@ export class MemStorage implements IStorage {
         location: "monopoli",
         capacity: 8,
         length: "11.70",
-        cabins: 1,
+        cabins: 2,
         pricePerDay: "",
-        images: [],
+        images: yachtImages["Cranchi Z35"] ?? [],
         features: ["Sport Cruiser", "Swimming Platform", "Sound System", "Refrigerator"],
         description: "Sport cruiser dinamico e veloce, perfetto per esplorare la costa in libertà.",
         description_en: "Dynamic and fast sport cruiser, perfect for exploring the coast in freedom.",
@@ -212,7 +234,7 @@ export class MemStorage implements IStorage {
         length: "13.86",
         cabins: 2,
         pricePerDay: "",
-        images: [],
+        images: yachtImages["Jeanneau Prestige 42 Fly"] ?? [],
         features: ["Flybridge", "Air Conditioning", "Large Cockpit", "Modern Interior"],
         description: "Motor yacht moderno con flybridge spazioso, ideale per charter di lusso.",
         description_en: "Modern motor yacht with spacious flybridge, ideal for luxury charters.",
@@ -261,7 +283,7 @@ export class MemStorage implements IStorage {
         cabins: 3,
         pricePerDay: "",
         images: yachtImages["Oceanis 351"] ?? [],
-        features: ["Timone a ruota", "GPS", "VHF", "Cucina", "Bagno", "Doccia", "Vele", "Ampio pozzetto"],
+        features: ["GPS", "VHF", "Cooker", "Toilet", "Sails", "Large Cockpit"],
         description: "Barca a vela ideale per crociere in famiglia o tra amici, comfort e prestazioni ottimali. Partenza da Monopoli.",
         description_en: "Sailboat ideal for family or friends cruises, optimal comfort and performance. Departure from Monopoli.",
         available: true,
@@ -306,7 +328,7 @@ export class MemStorage implements IStorage {
         location: "leuca",
         capacity: 10,
         length: "14.00",
-        cabins: 2,
+        cabins: 3,
         pricePerDay: "",
         images: yachtImages["Pershing 46"] ?? [],
         features: ["High Performance", "Luxury Interior", "Air Conditioning", "Premium Finish"],
@@ -322,7 +344,7 @@ export class MemStorage implements IStorage {
         location: "leuca",
         capacity: 12,
         length: "13.50",
-        cabins: 2,
+        cabins: 3,
         pricePerDay: "",
         images: yachtImages["Rizzardi Incredibile 45"] ?? [],
         features: ["Sport Design", "Large Cockpit", "High Speed", "Modern Equipment"],

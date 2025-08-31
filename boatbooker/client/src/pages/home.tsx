@@ -161,7 +161,7 @@ export default function Home() {
           <div className="mt-16 text-center">
             <div className="bg-white border-2 border-ocean-light rounded-3xl p-8 inline-block">
               <div className="flex items-center justify-center mb-4">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" className="w-8 h-8 mr-3" />
+                <img src="/attached_assets/google.png" alt="Google" className="w-8 h-8 mr-3" />
                 <span className="text-2xl font-bold text-ocean-navy">5.0</span>
                 <div className="flex text-yellow-400 ml-2">
                   {[...Array(5)].map((_, i) => (

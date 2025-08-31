@@ -1,7 +1,6 @@
 import { sql } from "drizzle-orm";
 import { pgTable, text, varchar, integer, decimal, boolean, timestamp, jsonb } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
-import { z } from "zod";
 
 export const yachts = pgTable("yachts", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
@@ -71,10 +70,10 @@ export const insertReviewSchema = createInsertSchema(reviews).omit({
   verified: true,
 });
 
-export type InsertYacht = z.infer<typeof insertYachtSchema>;
+export type InsertYacht = ReturnType<typeof insertYachtSchema['parse']>;
 export type Yacht = typeof yachts.$inferSelect;
-export type InsertBooking = z.infer<typeof insertBookingSchema>;
+export type InsertBooking = ReturnType<typeof insertBookingSchema['parse']>;
 export type Booking = typeof bookings.$inferSelect;
-export type InsertReview = z.infer<typeof insertReviewSchema>;
+export type InsertReview = ReturnType<typeof insertReviewSchema['parse']>;
 export type Review = typeof reviews.$inferSelect;
 export type Destination = typeof destinations.$inferSelect;
